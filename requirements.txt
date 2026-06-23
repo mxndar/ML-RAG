@@ -1,0 +1,44 @@
+# ============================================================
+# PDF Agentic RAG — Dependencies
+# ============================================================
+
+# --- LangGraph Orchestration ---
+langgraph>=0.2.0
+langchain-core>=0.3.0
+
+# --- Pydantic & Env ---
+pydantic>=2.0
+pydantic-settings>=2.0
+python-dotenv>=1.0.0
+
+# --- Cloud LLM (Groq) ---
+groq>=0.9.0
+
+# --- PDF Processing ---
+pypdf>=4.0
+pdfplumber>=0.11.0
+
+# --- Chunking / NLP ---
+nltk>=3.9
+
+# --- Embeddings (semantic cache ONLY) ---
+sentence-transformers>=3.0
+
+# --- BM25 Retrieval ---
+rank-bm25>=0.2.2
+
+# --- FAISS (semantic cache vector index) ---
+faiss-cpu>=1.8.0
+
+# --- Reranking (cross-encoder) ---
+# (included in sentence-transformers)
+
+# --- UI ---
+gradio>=4.40
+
+# --- Numerical ---
+numpy>=1.26
+
+# --- Testing ---
+pytest>=8.0
+pytest-asyncio>=0.23.0
