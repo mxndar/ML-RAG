@@ -18,6 +18,31 @@ from app.config import settings
 from app.schemas import CacheEntry, Evidence
 
 logger = logging.getLogger(__name__)
+ 
+_NEGATIVE_PHRASES = [
+    "no specific information",
+    "there is no evidence",
+    "no evidence provided",
+    "cannot answer this question because no evidence",
+    "does not contain",
+    "is not mentioned",
+    "no record of",
+    "not provide any information",
+    "insufficient evidence",
+    "no information regarding",
+    "there is no mention",
+    "does not provide",
+    "there is no record",
+    "there is no document named",
+    "there is no data table",
+    "error",
+]
+
+
+def _is_negative_answer(answer: str) -> bool:
+    """Check if answer indicates failure, missing data, or lack of evidence."""
+    lower = answer.strip().lower()
+    return any(phrase in lower for phrase in _NEGATIVE_PHRASES)
 
 
 class SemanticCache:
@@ -97,6 +122,17 @@ class SemanticCache:
             return None, similarity, False
 
         entry = self._entries[idx]
+
+        # Verify entry has valid evidence and is not a negative/failure response
+        has_ev = bool(entry.evidence and (entry.evidence.chunks or entry.evidence.tables))
+        is_neg = _is_negative_answer(entry.answer)
+        if not has_ev or is_neg:
+            self._misses += 1
+            logger.info(
+                f"Semantic cache entry for '{entry.query}' has no evidence or is negative response — bypassing as cache MISS"
+            )
+            return None, similarity, False
+
         age = time.time() - entry.timestamp
         is_fresh = age <= self._ttl_seconds
 
@@ -108,7 +144,12 @@ class SemanticCache:
         return entry, similarity, is_fresh
 
     def add(self, query: str, answer: str, evidence: Evidence) -> None:
-        """Add a new entry to the semantic cache."""
+        """Add a new entry to the semantic cache only if it has valid evidence and positive answer."""
+        has_ev = bool(evidence and (evidence.chunks or evidence.tables))
+        if not has_ev or _is_negative_answer(answer):
+            logger.info(f"Refusing to cache negative or empty-evidence answer for query: {query}")
+            return
+
         self._ensure_index()
 
         query_embedding = self._encode(query)

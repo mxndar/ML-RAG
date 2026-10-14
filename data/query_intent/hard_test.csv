@@ -1,0 +1,101 @@
+id,query,label,tool,is_hard_negative,notes
+0,What's on page 42?,Page,PageRetriever,False,Simple page lookup
+1,Show me the contents of page 7.,Page,PageRetriever,False,Simple page lookup
+2,Read out everything on page 15.,Page,PageRetriever,False,Direct page request
+3,What does page 100 say?,Page,PageRetriever,False,Large page number
+4,Get me page three.,Page,PageRetriever,False,Word-form page number
+5,I'd like to review page 23 of the contract.,Page,PageRetriever,False,With doc type
+6,Pull up the second page for me.,Page,PageRetriever,False,Ordinal form
+7,What info can be found on page 88?,Page,PageRetriever,False,Varied phrasing
+8,Display pages 5 through 8.,Page,PageRetriever,False,Page range
+9,Let me see what's on the very first page.,Page,PageRetriever,False,Ordinal special case
+10,Show me page 17 where it talks about depreciation.,Page,PageRetriever,True,Page+topic overlap
+11,Can I see page 31 of the appendix?,Page,PageRetriever,True,Page+section overlap
+12,What's written on page 6 about the budget?,Page,PageRetriever,True,Page+topic overlap
+13,How many pages does this PDF have?,General,BM25Search,True,Contains 'page' but meta-question
+14,Are the page headers consistent throughout?,General,BM25Search,True,Contains 'page' but meta-question
+15,What does the Introduction say?,Section,SectionRetriever,False,Simple section lookup
+16,Summarize the Methodology for me.,Section,SectionRetriever,False,Simple section lookup
+17,Tell me what's in the Conclusion.,Section,SectionRetriever,False,Simple section lookup
+18,Walk me through the Terms of Service.,Section,SectionRetriever,False,Legal section
+19,What are the highlights of the Executive Summary?,Section,SectionRetriever,False,Business section
+20,Give me the main points from the Literature Review.,Section,SectionRetriever,False,Academic section
+21,I want to understand the Scope of Work section better.,Section,SectionRetriever,False,With context
+22,Explain what's in the Privacy Policy section.,Section,SectionRetriever,False,Legal section
+23,What does the Appendix contain?,Section,SectionRetriever,False,Standard section
+24,Break down the Risk Assessment for me.,Section,SectionRetriever,False,Business section
+25,What does the document say about payment terms?,General,BM25Search,True,Topic without section name
+26,Is there anything about indemnification in here?,General,BM25Search,True,Topic without section name
+27,Does the Warranty section cover accidental damage?,Section,SectionRetriever,True,Section named explicitly
+28,Which section discusses intellectual property rights?,Section,SectionRetriever,True,Asking about a section
+29,Is there a section on force majeure?,Section,SectionRetriever,True,Asking about a section
+30,Extract the revenue table.,Table,TableExtractor,False,Simple table extraction
+31,Show me the comparison table for CPU benchmarks.,Table,TableExtractor,False,Table with topic
+32,Can you pull the pricing data table?,Table,TableExtractor,False,Table extraction
+33,Get me the employee count table.,Table,TableExtractor,False,Table extraction
+34,I need the sales figures in tabular format.,Table,TableExtractor,False,Table with format cue
+35,Pull up the performance metrics table from page 12.,Table,TableExtractor,False,Table with page hint
+36,What's in the quarterly earnings table?,Table,TableExtractor,False,Table question
+37,Show me all tables about operating expenses.,Table,TableExtractor,False,Multiple tables
+38,Retrieve the table listing all product SKUs.,Table,TableExtractor,False,Table retrieval
+39,Extract the table that compares pricing tiers.,Table,TableExtractor,False,Comparison table
+40,What were the quarterly earnings?,General,BM25Search,True,Numbers but no table cue
+41,How do the two models compare in terms of accuracy?,General,BM25Search,True,Comparison but no table cue
+42,What are the operating costs?,General,BM25Search,True,Numbers but no table cue
+43,What is the company's refund policy?,General,BM25Search,False,Simple keyword search
+44,How does the escalation process work?,General,BM25Search,False,Process question
+45,What are the minimum system requirements?,General,BM25Search,False,Factual lookup
+46,Who are the main stakeholders mentioned?,General,BM25Search,False,Entity question
+47,What is the deadline for submission?,General,BM25Search,False,Date/factual question
+48,Explain how the scoring algorithm works.,General,BM25Search,False,Explanation question
+49,What prerequisites are needed to get started?,General,BM25Search,False,Requirements question
+50,Does the document mention any exclusions?,General,BM25Search,False,Existence question
+51,What happens if I miss the deadline?,General,BM25Search,False,Conditional question
+52,How long is the probationary period?,General,BM25Search,False,Duration question
+53,What's the maximum liability amount?,General,BM25Search,False,Specific value question
+54,Can you find where it mentions overtime pay?,General,BM25Search,False,Search question
+55,What does page 5 of the manual say about safety?,Page,PageRetriever,True,Page+topic combined
+56,Show page 12.,Page,PageRetriever,False,Minimal page query
+57,Read me pages 20 to 25.,Page,PageRetriever,False,Page range
+58,What's on the last page of the report?,Page,PageRetriever,False,Relative page reference
+59,Flip to page 9.,Page,PageRetriever,False,Colloquial page request
+60,What's the content on page forty-four?,Page,PageRetriever,False,Word-form number
+61,Which page has the org chart?,General,BM25Search,True,Asks about page but not page lookup
+62,Point me to the Definitions section.,Section,SectionRetriever,False,Direct section request
+63,What clauses are in the Indemnification section?,Section,SectionRetriever,False,Section with detail
+64,How does the Dispute Resolution section handle arbitration?,Section,SectionRetriever,False,Section with sub-topic
+65,Can you read the Confidentiality section to me?,Section,SectionRetriever,False,Read request for section
+66,What restrictions are listed under the Non-Compete section?,Section,SectionRetriever,False,Section detail query
+67,Show the tabulated comparison of plan features.,Table,TableExtractor,False,Tabulated cue word
+68,Are there any charts or tables about market share?,Table,TableExtractor,False,Chart/table cue
+69,Give me the data table from the appendix.,Table,TableExtractor,False,Table in specific location
+70,What does the balance sheet table show?,Table,TableExtractor,False,Financial table
+71,Pull up the compliance checklist table.,Table,TableExtractor,False,Checklist as table
+72,Does the contract mention a cooling-off period?,General,BM25Search,False,Legal topic query
+73,What certifications are required?,General,BM25Search,False,Requirements query
+74,How is the data encrypted at rest?,General,BM25Search,False,Technical query
+75,Who signs off on budget changes?,General,BM25Search,False,Process/authority query
+76,What are the accepted payment methods?,General,BM25Search,False,Factual query
+77,Give me the information from page 3 about enrollment.,Page,PageRetriever,True,Page+topic overlap
+78,Summarize the key findings across sections 3 through 5.,Section,SectionRetriever,False,Multi-section reference
+79,What tables are there about resource allocation?,Table,TableExtractor,False,Topic-filtered table query
+80,Tell me about the conflict of interest policy.,General,BM25Search,False,Policy question
+81,Where does the document define SLA?,General,BM25Search,False,Definition search
+82,Page 1 please.,Page,PageRetriever,False,Minimal request
+83,Could you extract every table in the report?,Table,TableExtractor,False,Broad table extraction
+84,What's under the Governing Law heading?,Section,SectionRetriever,False,Heading reference
+85,Are there tables showing year-over-year growth?,Table,TableExtractor,True,Ambiguous: table cue present
+86,What year-over-year growth does the document show?,General,BM25Search,True,Same topic no table cue
+87,Open page 14 and tell me about the risk matrix.,Page,PageRetriever,True,Page+topic overlap
+88,I want the risk matrix data.,General,BM25Search,True,No table cue despite data word
+89,Extract the risk matrix table.,Table,TableExtractor,True,Explicit table cue
+90,What does the risk factors section say about credit risk?,Section,SectionRetriever,True,Section named explicitly
+91,What credit risks are described?,General,BM25Search,True,Topic without section name
+92,Go to page 8.,Page,PageRetriever,False,Minimal page navigation
+93,What does the overview chapter talk about?,Section,SectionRetriever,False,Chapter reference
+94,Summarize the FAQ.,Section,SectionRetriever,False,FAQ as section
+95,Does the table of contents mention a glossary?,General,BM25Search,True,Table of contents not a data table
+96,What are the next steps outlined in the document?,General,BM25Search,False,Process question
+97,Show me the headcount data in table form.,Table,TableExtractor,False,Table form cue
+98,What is discussed on page 20?,Page,PageRetriever,False,Page question
+99,How is intellectual property handled under this agreement?,General,BM25Search,False,Legal topic question

@@ -54,8 +54,11 @@ async def rerank(
 
     start = time.time()
 
-    # Prepare (query, passage) pairs for the cross-encoder
-    pairs = [(query, chunk.text) for chunk in chunks]
+    # Prepare (query, passage) pairs for the cross-encoder with document context
+    pairs = [
+        (query, f"[{chunk.metadata.source or chunk.metadata.document_name}]\n{chunk.text}")
+        for chunk in chunks
+    ]
 
     # Score all pairs
     scores = _model.predict(pairs)

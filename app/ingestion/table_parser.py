@@ -14,6 +14,7 @@ from app.config import settings
 from app.schemas import ExtractedTable
 
 logger = logging.getLogger(__name__)
+logging.getLogger("pdfminer").setLevel(logging.ERROR)
 
 
 @dataclass

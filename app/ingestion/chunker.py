@@ -77,11 +77,27 @@ class ChunkingResult:
     bm25_chunk_ids: list[str] = field(default_factory=list)
 
 
+_cached_embedding_model = None
+
+
+def get_embedding_model():
+    """Get or initialize the cached singleton embedding model."""
+    global _cached_embedding_model
+    if _cached_embedding_model is None:
+        from sentence_transformers import SentenceTransformer
+        logger.info(f"Loading embedding model: {settings.embedding_model}")
+        try:
+            _cached_embedding_model = SentenceTransformer(settings.embedding_model, local_files_only=True)
+        except Exception:
+            _cached_embedding_model = SentenceTransformer(settings.embedding_model)
+    return _cached_embedding_model
+
+
 def _compute_sentence_embeddings(sentences: list[str], model) -> np.ndarray:
     """Compute embeddings for a list of sentences."""
     if not sentences:
         return np.array([])
-    embeddings = model.encode(sentences, show_progress_bar=False, normalize_embeddings=True)
+    embeddings = model.encode(sentences, batch_size=64, show_progress_bar=False, normalize_embeddings=True)
     return np.array(embeddings)
 
 
@@ -124,9 +140,7 @@ def chunk_document(
     """
     # ── Load embedding model if needed ──
     if embedding_model is None:
-        from sentence_transformers import SentenceTransformer
-        logger.info(f"Loading embedding model: {settings.embedding_model}")
-        embedding_model = SentenceTransformer(settings.embedding_model)
+        embedding_model = get_embedding_model()
 
     # ── Step 1: Build sentence list with page tracking ──
     @dataclass

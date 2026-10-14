@@ -24,13 +24,14 @@ def merge_evidence(
     section_chunks: list[Chunk] | None = None,
     tables: list[ExtractedTable] | None = None,
     max_tokens: int | None = None,
+    query: str = "",
 ) -> Evidence:
     """
     Merge outputs from all tools into a unified Evidence object.
 
     Priority order (highest first):
-      1. Reranked BM25 chunks (most relevant)
-      2. Tables (structured data)
+      1. Tables (if query has table intent) OR Reranked BM25 chunks
+      2. Whichever wasn't first
       3. Section content
       4. Page content
 
@@ -42,11 +43,24 @@ def merge_evidence(
         section_chunks: Chunks from section_retriever.
         tables: Extracted tables.
         max_tokens: Token budget (default from config).
+        query: Original user query (used for table intent detection).
 
     Returns:
         Merged Evidence with total_tokens ≤ max_tokens.
     """
     limit = max_tokens or settings.max_evidence_tokens
+
+    # Increase token budget for table-intent queries (tables are markdown-heavy)
+    query_lower = query.lower() if query else ""
+    _table_intent = any(kw in query_lower for kw in [
+        "table", "fee", "fees", "cost", "price", "amount", "total",
+        "revenue", "salary", "budget", "payment", "receipt",
+        "data", "statistics", "numbers", "values", "percentage",
+        "compare", "comparison", "results", "metrics", "list",
+        "column", "row", "attendance", "record", "sheet", "marks", "score",
+    ])
+    if _table_intent and tables:
+        limit = max(limit, 600)  # Give tables room to breathe
 
     seen_chunk_ids: set[str] = set()
     merged_chunks: list[Chunk] = []
@@ -90,9 +104,14 @@ def merge_evidence(
             merged_tables.append(table)
             total_tokens += table_tokens
 
-    # ── Add in priority order ──
-    add_chunks(bm25_chunks)        # Priority 1: reranked BM25
-    add_tables(tables)             # Priority 2: tables
+
+    # ── Add in priority order (tables first when table intent detected) ──
+    if _table_intent:
+        add_tables(tables)             # Priority 1: tables (when table intent)
+        add_chunks(bm25_chunks)        # Priority 2: reranked BM25
+    else:
+        add_chunks(bm25_chunks)        # Priority 1: reranked BM25
+        add_tables(tables)             # Priority 2: tables
     add_chunks(section_chunks)     # Priority 3: section content
     add_chunks(page_chunks)        # Priority 4: page content
 

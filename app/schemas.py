@@ -59,6 +59,10 @@ class Evidence(BaseModel):
     total_tokens: int = 0
     confidence: float = 0.0
 
+    def __bool__(self) -> bool:
+        """True if evidence contains any retrieved chunks or tables."""
+        return bool(self.chunks or self.tables)
+
 
 # ── Critic ──────────────────────────────────────────────────
 
@@ -105,4 +109,8 @@ class QueryResponse(BaseModel):
     confidence: float = 0.0
     cache_type: str = "none"  # "exact" | "semantic" | "none"
     llm_calls: int = 0
+    # ML Router metadata
+    router_used: bool = False
+    intent_label: str = ""
+    router_confidence: float = 0.0
     trace: list[TraceStep] = Field(default_factory=list)

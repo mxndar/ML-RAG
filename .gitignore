@@ -9,13 +9,22 @@ env/
 .env
 .venv
 
-# RAG Data and Indices (Do NOT upload heavy PDFs or index databases)
-data/
+# Large model weights (>100MB exceeds GitHub limits)
+*.safetensors
+*.bin
+*.pt
+*.onnx
+app/router/saved_models/distilbert/model.safetensors
+
+# RAG Indices and heavy files (Do NOT upload index databases or raw PDFs)
 indices/
 *.pdf
+*.sqlite3
+*.db
 
-# IDEs and Editors
+# OS / IDEs and Editors
 .vscode/
 .idea/
 *.swp
 .DS_Store
+*/.DS_Store

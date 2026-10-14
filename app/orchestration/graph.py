@@ -2,8 +2,8 @@
 LangGraph Orchestration — the complete agentic RAG workflow.
 
 Flow:
-  Query → Exact Cache → Semantic Cache → Planner → Tool Execution
-  → Reranker → Evidence Merger → Critic → (retry?) → Generator → Cache Update
+  Query → Exact Cache → Semantic Cache → ML Router → [confident: Tools | uncertain: Planner]
+  → Tool Execution → Reranker → Evidence Merger → Critic → (retry?) → Generator → Cache Update
 """
 
 from __future__ import annotations
@@ -18,7 +18,7 @@ from langgraph.graph import END, START, StateGraph
 from app.cache.exact_cache import ExactCache
 from app.cache.semantic_cache import SemanticCache
 from app.config import settings
-from app.retrieval.critic import validate_evidence
+from app.retrieval.critic import validate_evidence, _has_table_intent
 from app.retrieval.evidence_merger import merge_evidence
 from app.retrieval.planner import run_planner
 from app.retrieval.reranker import rerank
@@ -46,6 +46,10 @@ class RAGState(TypedDict, total=False):
     cached_evidence: Evidence
     semantic_similarity: float
     semantic_is_fresh: bool
+    # ML Router
+    intent_label: str
+    router_confidence: float
+    router_used: bool
     # Planner
     planned_tools: list[str]
     tool_params: dict
@@ -100,16 +104,24 @@ async def check_exact_cache(state: RAGState) -> dict[str, Any]:
     )
 
     if entry is not None:
-        trace_step.cache_hit = True
-        trace_step.result_summary = "Exact cache HIT"
-        return {
-            "cache_hit": True,
-            "cache_type": "exact",
-            "cached_answer": entry.answer,
-            "cached_evidence": entry.evidence,
-            "confidence": 1.0,
-            "trace": state.get("trace", []) + [trace_step],
-        }
+        has_ev = bool(entry.evidence and (entry.evidence.chunks or entry.evidence.tables))
+        is_err = entry.answer.strip().lower().startswith((
+            "error",
+            "i cannot answer this question because no evidence",
+            "there is no evidence",
+            "no evidence available",
+        ))
+        if has_ev and not is_err:
+            trace_step.cache_hit = True
+            trace_step.result_summary = "Exact cache HIT"
+            return {
+                "cache_hit": True,
+                "cache_type": "exact",
+                "cached_answer": entry.answer,
+                "cached_evidence": entry.evidence,
+                "confidence": 1.0,
+                "trace": state.get("trace", []) + [trace_step],
+            }
 
     trace_step.result_summary = "Exact cache MISS"
     return {
@@ -133,20 +145,29 @@ async def check_semantic_cache(state: RAGState) -> dict[str, Any]:
     )
 
     if entry is not None:
-        trace_step.cache_hit = True
-        trace_step.result_summary = f"Semantic cache HIT (sim={similarity:.4f}, fresh={is_fresh})"
-        result: dict[str, Any] = {
-            "cache_hit": True,
-            "cache_type": "semantic",
-            "cached_evidence": entry.evidence,
-            "semantic_similarity": similarity,
-            "semantic_is_fresh": is_fresh,
-            "trace": state.get("trace", []) + [trace_step],
-        }
-        if is_fresh:
-            result["cached_answer"] = entry.answer
-            result["confidence"] = 1.0
-        return result
+        has_ev = bool(entry.evidence and (entry.evidence.chunks or entry.evidence.tables))
+        is_err = entry.answer.strip().lower().startswith((
+            "error",
+            "i cannot answer this question because no evidence",
+            "there is no evidence",
+            "no evidence available",
+        ))
+        if has_ev and not is_err:
+            trace_step.cache_hit = True
+            trace_step.result_summary = f"Semantic cache HIT (sim={similarity:.4f}, fresh={is_fresh})"
+            result: dict[str, Any] = {
+                "cache_hit": True,
+                "cache_type": "semantic",
+                "evidence": entry.evidence,
+                "cached_evidence": entry.evidence,
+                "semantic_similarity": similarity,
+                "semantic_is_fresh": is_fresh,
+                "trace": state.get("trace", []) + [trace_step],
+            }
+            if is_fresh:
+                result["cached_answer"] = entry.answer
+                result["confidence"] = 1.0
+            return result
 
     trace_step.result_summary = f"Semantic cache MISS (sim={similarity:.4f})"
     return {
@@ -154,6 +175,91 @@ async def check_semantic_cache(state: RAGState) -> dict[str, Any]:
         "semantic_similarity": similarity,
         "trace": state.get("trace", []) + [trace_step],
     }
+
+
+async def ml_router_node(state: RAGState) -> dict[str, Any]:
+    """ML-based query-intent router — classifies query to skip the LLM planner when confident."""
+    start = time.time()
+
+    if not settings.router_enabled:
+        trace_step = TraceStep(
+            node="ml_router",
+            duration_ms=(time.time() - start) * 1000,
+            result_summary="Router DISABLED — falling back to planner",
+        )
+        return {
+            "router_used": False,
+            "router_confidence": 0.0,
+            "intent_label": "",
+            "trace": state.get("trace", []) + [trace_step],
+        }
+
+    try:
+        from app.router.query_router import predict, extract_tool_params, is_loaded, load_model
+
+        if not is_loaded():
+            load_model()
+
+        label, tool, confidence = predict(state["query"])
+        params = extract_tool_params(state["query"], label)
+
+        trace_step = TraceStep(
+            node="ml_router",
+            duration_ms=(time.time() - start) * 1000,
+            result_summary=(
+                f"{label} (conf={confidence:.3f}) → "
+                f"{'ROUTE' if confidence >= settings.router_confidence_threshold else 'FALLBACK'}"
+            ),
+            details={
+                "label": label,
+                "tool": tool,
+                "confidence": round(confidence, 4),
+                "threshold": settings.router_confidence_threshold,
+                "params": params,
+            },
+        )
+
+        result: dict[str, Any] = {
+            "intent_label": label,
+            "router_confidence": confidence,
+            "trace": state.get("trace", []) + [trace_step],
+        }
+
+        if confidence >= settings.router_confidence_threshold:
+            # High confidence: route directly, set planned_tools + params
+            result["router_used"] = True
+            # For table queries, always dual-dispatch: table_extractor + bm25
+            # This ensures table data AND surrounding context are both retrieved
+            if tool == "table_extractor" or _has_table_intent(state["query"]):
+                result["planned_tools"] = ["table_extractor", "bm25"]
+            else:
+                result["planned_tools"] = [tool]
+            result["tool_params"] = params
+            logger.info(
+                f"ML Router: {label} (conf={confidence:.3f}) → direct dispatch to {result['planned_tools']}"
+            )
+        else:
+            # Low confidence: fall back to LLM planner
+            result["router_used"] = False
+            logger.info(
+                f"ML Router: {label} (conf={confidence:.3f}) → fallback to planner"
+            )
+
+        return result
+
+    except Exception as e:
+        logger.error(f"ML Router failed: {e}, falling back to planner")
+        trace_step = TraceStep(
+            node="ml_router",
+            duration_ms=(time.time() - start) * 1000,
+            result_summary=f"Router ERROR: {e} — falling back to planner",
+        )
+        return {
+            "router_used": False,
+            "router_confidence": 0.0,
+            "intent_label": "",
+            "trace": state.get("trace", []) + [trace_step],
+        }
 
 
 async def run_planner_node(state: RAGState) -> dict[str, Any]:
@@ -194,6 +300,16 @@ async def execute_tools(state: RAGState) -> dict[str, Any]:
     tools = state.get("planned_tools", ["bm25"])
     params = state.get("tool_params", {})
     query = params.get("query", state["query"])
+
+    # Ensure tools are loaded from disk
+    if not bm25_tool.is_loaded():
+        try:
+            bm25_tool.load_bm25()
+            page_tool.load_page_index()
+            section_tool.load_section_index()
+            table_tool.load_tables()
+        except Exception as e:
+            logger.warning(f"Could not auto-load tools: {e}")
 
     # Prepare coroutines
     tasks: dict[str, Any] = {}
@@ -285,6 +401,7 @@ async def merge_evidence_node(state: RAGState) -> dict[str, Any]:
         page_chunks=state.get("page_chunks"),
         section_chunks=state.get("section_chunks"),
         tables=state.get("tables"),
+        query=state["query"],
     )
 
     trace_step = TraceStep(
@@ -329,7 +446,14 @@ async def generate_node(state: RAGState) -> dict[str, Any]:
     from app.generation.generator import generate_answer
 
     # Use cached evidence if available (stale semantic cache hit)
-    evidence = state.get("evidence") or state.get("cached_evidence", Evidence())
+    ev = state.get("evidence")
+    cached_ev = state.get("cached_evidence")
+    if ev and (ev.chunks or ev.tables):
+        evidence = ev
+    elif cached_ev and (cached_ev.chunks or cached_ev.tables):
+        evidence = cached_ev
+    else:
+        evidence = Evidence()
 
     answer, metrics = await generate_answer(state["query"], evidence)
 
@@ -351,7 +475,7 @@ async def generate_node(state: RAGState) -> dict[str, Any]:
 
 
 async def cache_update_node(state: RAGState) -> dict[str, Any]:
-    """Store the result in both caches."""
+    """Store the result in both caches only if evidence is present and answer is valid."""
     start = time.time()
     exact_cache, semantic_cache = get_caches()
 
@@ -359,17 +483,30 @@ async def cache_update_node(state: RAGState) -> dict[str, Any]:
     evidence = state.get("evidence", Evidence())
     query = state["query"]
 
-    # Update exact cache
-    await exact_cache.set(query, answer, evidence)
+    has_ev = bool(evidence and (evidence.chunks or evidence.tables))
+    is_err = answer.strip().lower().startswith((
+        "error",
+        "i cannot answer this question because no evidence",
+        "there is no evidence",
+        "no evidence available",
+    ))
 
-    # Update semantic cache
-    semantic_cache.add(query, answer, evidence)
-    semantic_cache.save()
+    if has_ev and not is_err:
+        # Update exact cache
+        await exact_cache.set(query, answer, evidence)
+
+        # Update semantic cache
+        semantic_cache.add(query, answer, evidence)
+        semantic_cache.save()
+        summary = "Updated exact + semantic cache"
+    else:
+        summary = "Skipped cache update (no evidence or error answer)"
+        logger.info(f"Skipping cache update for '{query[:40]}...' (has_evidence={has_ev})")
 
     trace_step = TraceStep(
         node="cache_update",
         duration_ms=(time.time() - start) * 1000,
-        result_summary="Updated exact + semantic cache",
+        result_summary=summary,
     )
 
     return {
@@ -382,17 +519,28 @@ async def cache_update_node(state: RAGState) -> dict[str, Any]:
 def route_exact_cache(state: RAGState) -> str:
     """Route after exact cache check."""
     if state.get("cache_hit") and state.get("cache_type") == "exact":
-        return "hit"
+        ev = state.get("cached_evidence")
+        if ev and (ev.chunks or ev.tables):
+            return "hit"
     return "miss"
 
 
 def route_semantic_cache(state: RAGState) -> str:
     """Route after semantic cache check."""
     if state.get("cache_hit") and state.get("cache_type") == "semantic":
-        if state.get("semantic_is_fresh"):
-            return "hit_fresh"
-        return "hit_stale"
+        ev = state.get("cached_evidence")
+        if ev and (ev.chunks or ev.tables):
+            if state.get("semantic_is_fresh"):
+                return "hit_fresh"
+            return "hit_stale"
     return "miss"
+
+
+def route_ml_router(state: RAGState) -> str:
+    """Route after ML router: confident → tools, uncertain → planner."""
+    if state.get("router_used"):
+        return "confident"
+    return "uncertain"
 
 
 def route_critic(state: RAGState) -> str:
@@ -416,6 +564,11 @@ def build_rag_graph() -> StateGraph:
     """
     Build the complete LangGraph workflow.
 
+    Flow:
+      Query → Exact Cache → Semantic Cache → ML Router
+      → [confident: execute_tools | uncertain: run_planner → execute_tools]
+      → Rerank → Evidence Merger → Critic → (retry?) → Generator → Cache Update
+
     Returns a compiled StateGraph ready for invocation.
     """
     graph = StateGraph(RAGState)
@@ -423,6 +576,7 @@ def build_rag_graph() -> StateGraph:
     # Add nodes
     graph.add_node("check_exact_cache", check_exact_cache)
     graph.add_node("check_semantic_cache", check_semantic_cache)
+    graph.add_node("ml_router", ml_router_node)
     graph.add_node("run_planner", run_planner_node)
     graph.add_node("execute_tools", execute_tools)
     graph.add_node("rerank", rerank_node)
@@ -443,11 +597,18 @@ def build_rag_graph() -> StateGraph:
         {"hit": END, "miss": "check_semantic_cache"},
     )
 
-    # Semantic Cache → hit_fresh: END, hit_stale: Generate, miss: Planner
+    # Semantic Cache → hit_fresh: END, hit_stale: Generate, miss: ML Router
     graph.add_conditional_edges(
         "check_semantic_cache",
         route_semantic_cache,
-        {"hit_fresh": END, "hit_stale": "generate", "miss": "run_planner"},
+        {"hit_fresh": END, "hit_stale": "generate", "miss": "ml_router"},
+    )
+
+    # ML Router → confident: execute_tools (skip planner), uncertain: run_planner
+    graph.add_conditional_edges(
+        "ml_router",
+        route_ml_router,
+        {"confident": "execute_tools", "uncertain": "run_planner"},
     )
 
     # Planner → Tool Execution
@@ -508,6 +669,9 @@ async def run_query(query: str) -> QueryResponse:
         "cached_evidence": Evidence(),
         "semantic_similarity": 0.0,
         "semantic_is_fresh": False,
+        "intent_label": "",
+        "router_confidence": 0.0,
+        "router_used": False,
         "planned_tools": [],
         "tool_params": {},
         "bm25_chunks": [],
@@ -529,7 +693,14 @@ async def run_query(query: str) -> QueryResponse:
 
     # Build response
     answer = final_state.get("cached_answer") or final_state.get("answer", "")
-    evidence = final_state.get("evidence") or final_state.get("cached_evidence", Evidence())
+    ev = final_state.get("evidence")
+    cached_ev = final_state.get("cached_evidence")
+    if ev and (ev.chunks or ev.tables):
+        evidence = ev
+    elif cached_ev and (cached_ev.chunks or cached_ev.tables):
+        evidence = cached_ev
+    else:
+        evidence = Evidence()
 
     return QueryResponse(
         answer=answer,
@@ -538,5 +709,8 @@ async def run_query(query: str) -> QueryResponse:
         confidence=final_state.get("confidence", 0.0),
         cache_type=final_state.get("cache_type", "none"),
         llm_calls=final_state.get("llm_calls", 0),
+        router_used=final_state.get("router_used", False),
+        intent_label=final_state.get("intent_label", ""),
+        router_confidence=final_state.get("router_confidence", 0.0),
         trace=final_state.get("trace", []),
     )

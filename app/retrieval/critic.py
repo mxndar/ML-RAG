@@ -25,6 +25,8 @@ def _has_table_intent(query: str) -> bool:
         r"\bvalues?\b", r"\bpercentage\b", r"\bcompare\b",
         r"\bcomparison\b", r"\bresults?\b", r"\bmetrics?\b",
         r"\blist\b", r"\bcolumn\b", r"\brow\b",
+        r"\battendance\b", r"\brecord\b", r"\bsheet\b",
+        r"\bfees?\b", r"\bmarks?\b", r"\bscores?\b",
     ]
     pattern = "|".join(table_keywords)
     return bool(re.search(pattern, query.lower()))
@@ -105,10 +107,7 @@ def validate_evidence(query: str, evidence: Evidence) -> CriticResult:
 
     # Check 3: Table intent but no tables?
     if _has_table_intent(query) and not evidence.tables:
-        # Only flag if no chunks mention table-like content either
-        chunk_text = " ".join(c.text for c in evidence.chunks).lower()
-        if "table" not in chunk_text and "|" not in chunk_text:
-            issues.append("missing_table_data")
+        issues.append("missing_table_data")
 
     # Check 4: Section reference but no section content?
     if _has_section_reference(query) and not _has_section_evidence(evidence):

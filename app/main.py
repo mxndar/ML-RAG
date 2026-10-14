@@ -26,12 +26,23 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 from app.config import settings
-from app.schemas import QueryResponse
+from app.schemas import Chunk, ChunkMeta, QueryResponse
 
 # ── Global state ────────────────────────────────────────────
 
 _is_indexed = False
 _index_status = "No document indexed. Upload a PDF in the Ingest tab."
+
+# Router analytics tracking
+_router_stats = {
+    "total_queries": 0,
+    "router_handled": 0,
+    "planner_fallback": 0,
+    "cache_hits": 0,
+    "confidences": [],
+    "latencies_with_router": [],
+    "latencies_without_router": [],
+}
 
 
 def _check_indexed() -> bool:
@@ -44,12 +55,13 @@ def _check_indexed() -> bool:
 
 # ── Ingestion ───────────────────────────────────────────────
 
-def ingest_pdf(files) -> str:
-    """Process and index multiple PDF files."""
+def ingest_pdf(files, progress=gr.Progress()):
+    """Process and index multiple PDF files with live progress streaming."""
     global _is_indexed, _index_status
 
     if not files:
-        return "❌ No files uploaded."
+        yield "❌ No files uploaded."
+        return
 
     # If Gradio returns a single file instead of a list, wrap it
     if not isinstance(files, list):
@@ -60,13 +72,22 @@ def ingest_pdf(files) -> str:
     try:
         from app.ingestion.loader import load_pdf
         from app.ingestion.cleaner import clean_document
-        from app.ingestion.chunker import chunk_document, save_chunking_result, ChunkingResult
+        from app.ingestion.chunker import (
+            chunk_document,
+            get_embedding_model,
+            save_chunking_result,
+            ChunkingResult,
+        )
         from app.ingestion.table_parser import extract_tables, save_table_store, TableStore
         import string
         from rank_bm25 import BM25Okapi
 
         status = f"📄 Starting batch ingestion of {len(files)} PDFs...\n"
-        
+        yield status
+
+        progress(0, desc="Preparing embedding model...")
+        embedding_model = get_embedding_model()
+
         # Global accumulators
         global_chunks = []
         global_section_index = {}
@@ -82,7 +103,9 @@ def ingest_pdf(files) -> str:
 
         for i, file in enumerate(files):
             file_path = file.name if hasattr(file, "name") else str(file)
-            status += f"\n[{i+1}/{len(files)}] Processing {file_path.split('/')[-1]}..."
+            filename = file_path.split("/")[-1]
+            status += f"\n[{i+1}/{len(files)}] Processing {filename}..."
+            yield status
             logger.info(f"Processing: {file_path}")
 
             # 1. Load PDF
@@ -94,10 +117,11 @@ def ingest_pdf(files) -> str:
             pages_text = [p.text for p in loader_result.pages]
             cleaned_pages = clean_document(pages_text)
 
-            # 3. Semantic chunking
+            # 3. Semantic chunking (re-using preloaded embedding model)
             chunking_result = chunk_document(
                 pages_text=cleaned_pages,
                 document_name=loader_result.document_name,
+                embedding_model=embedding_model,
             )
             
             # Aggregate Chunks
@@ -120,8 +144,34 @@ def ingest_pdf(files) -> str:
                 global_tables.append(tbl)
                 global_table_page_index.setdefault(tbl.page_number, []).append(idx)
 
+            # 4b. Create synthetic BM25 chunks from table content
+            #     This makes table data searchable via keyword (BM25) queries
+            for tbl in table_store.tables:
+                import uuid
+                table_chunk_id = f"tbl-{uuid.uuid4().hex[:8]}"
+                table_text = tbl.markdown
+                table_chunk = Chunk(
+                    text=table_text,
+                    metadata=ChunkMeta(
+                        chunk_id=table_chunk_id,
+                        page_number=tbl.page_number,
+                        section_name=f"Table (page {tbl.page_number})",
+                        document_name=tbl.document_name,
+                        source="table",
+                    ),
+                )
+                global_chunks.append(table_chunk)
+                global_bm25_corpus.append(table_text)
+                global_bm25_chunk_ids.append(table_chunk_id)
+                global_page_index.setdefault(tbl.page_number, []).append(table_chunk_id)
+
+            status += f" ✅ ({len(chunking_result.chunks)} chunks, {len(table_store.tables)} tables)"
+            progress((i + 1) / (len(files) + 1), desc=f"Processed {filename}")
+            yield status
+
         # 5. Build Unified BM25 Index over the global corpus
         status += f"\n\n⚙️ Building unified BM25 search index over {len(global_chunks)} chunks..."
+        yield status
         logger.info("Building unified BM25 index...")
         tokenized_corpus = []
         for doc in global_bm25_corpus:
@@ -149,6 +199,7 @@ def ingest_pdf(files) -> str:
 
         # 7. Reload tools into memory
         status += "\n🔄 Reloading tools with new data..."
+        yield status
         _load_tools()
 
         _is_indexed = True
@@ -162,22 +213,25 @@ def ingest_pdf(files) -> str:
         status += f"\n  • Total Sections: {len(global_section_index)}"
         status += f"\n  • Total Tables: {len(global_tables)}"
         status += f"\n  • Unified BM25 index: ready"
-
-        return status
+        progress(1.0, desc="Batch Indexing complete!")
+        yield status
 
     except Exception as e:
         logger.exception("Batch ingestion failed")
-        return f"❌ Batch Ingestion failed: {e}"
+        yield f"❌ Batch Ingestion failed: {e}"
 
 
 def _load_tools():
     """Load all tools from persisted indices."""
     from app.tools import bm25_tool, page_tool, section_tool, table_tool
+    from app.ingestion.chunker import get_embedding_model
 
     bm25_tool.load_bm25()
     page_tool.load_page_index()
     section_tool.load_section_index()
     table_tool.load_tables()
+    # Preload embedding model into memory
+    get_embedding_model()
     logger.info("All tools loaded successfully")
 
 
@@ -206,6 +260,23 @@ def search_query(query: str) -> tuple[str, str, str, str]:
     try:
         from app.orchestration.graph import run_query
         response: QueryResponse = asyncio.run(run_query(query))
+
+        # Track router stats
+        _router_stats["total_queries"] += 1
+        total_ms = sum(s.duration_ms for s in response.trace)
+        for step in response.trace:
+            if step.node == "ml_router":
+                conf = step.details.get("confidence", 0)
+                _router_stats["confidences"].append(conf)
+                if "ROUTE" in step.result_summary:
+                    _router_stats["router_handled"] += 1
+                    _router_stats["latencies_with_router"].append(total_ms)
+                elif "FALLBACK" in step.result_summary or "DISABLED" in step.result_summary:
+                    _router_stats["planner_fallback"] += 1
+                    _router_stats["latencies_without_router"].append(total_ms)
+            if step.node in ("exact_cache", "semantic_cache") and step.cache_hit:
+                _router_stats["cache_hits"] += 1
+
         return _format_response(response)
 
     except Exception as e:
@@ -271,8 +342,13 @@ def _format_response(response: QueryResponse) -> tuple[str, str, str, str]:
     ]
     if response.citations:
         metrics_parts.append(f"**Citations:** {', '.join(response.citations)}")
-    # Similarity if semantic cache was checked
+    # Router info from trace
     for step in response.trace:
+        if step.node == "ml_router" and step.details:
+            label = step.details.get('label', '?')
+            conf = step.details.get('confidence', 0)
+            routed = '✅ Routed' if 'ROUTE' in step.result_summary else '🔄 Planner'
+            metrics_parts.append(f"**Router:** {routed} ({label}, {conf:.2f})")
         if step.node == "semantic_cache" and step.details.get("similarity"):
             metrics_parts.append(f"**Semantic Similarity:** {step.details['similarity']:.4f}")
 
@@ -281,23 +357,25 @@ def _format_response(response: QueryResponse) -> tuple[str, str, str, str]:
     return answer, evidence_text, trace_text, metrics_text
 
 
-# ── Cache Stats ─────────────────────────────────────────────
+def get_system_stats() -> str:
+    """Get cache + router statistics."""
+    parts = []
 
-def get_cache_stats() -> str:
-    """Get current cache statistics."""
+    # Cache stats
     try:
         from app.orchestration.graph import get_caches
         exact, semantic = get_caches()
         exact_stats = exact.stats()
         semantic_stats = semantic.stats()
 
-        return (
-            f"## Exact Cache\n"
+        parts.append(
+            f"## 💾 Cache Statistics\n\n"
+            f"### Exact Cache\n"
             f"- Size: {exact_stats['size']} entries\n"
             f"- Hits: {exact_stats['hits']}\n"
             f"- Misses: {exact_stats['misses']}\n"
             f"- Hit Rate: {exact_stats['hit_rate']:.1%}\n\n"
-            f"## Semantic Cache\n"
+            f"### Semantic Cache\n"
             f"- Size: {semantic_stats['size']} entries\n"
             f"- Hits: {semantic_stats['hits']}\n"
             f"- Misses: {semantic_stats['misses']}\n"
@@ -305,7 +383,63 @@ def get_cache_stats() -> str:
             f"- Threshold: {semantic_stats['threshold']}"
         )
     except Exception:
-        return "Cache not initialized yet."
+        parts.append("## 💾 Cache\n\nCache not initialized yet.")
+
+    # Router stats
+    from app.config import settings
+    total = _router_stats["total_queries"]
+    routed = _router_stats["router_handled"]
+    fallback = _router_stats["planner_fallback"]
+    cache_h = _router_stats["cache_hits"]
+    confs = _router_stats["confidences"]
+
+    parts.append(f"\n---\n\n## 🤖 ML Router Statistics\n")
+    parts.append(
+        f"- **Status:** {'✅ Enabled' if settings.router_enabled else '❌ Disabled'}\n"
+        f"- **Model:** {settings.router_model_type}\n"
+        f"- **Confidence Threshold:** {settings.router_confidence_threshold}\n"
+    )
+
+    if total > 0:
+        non_cache = routed + fallback
+        router_pct = 100 * routed / non_cache if non_cache > 0 else 0
+        planner_pct = 100 * fallback / non_cache if non_cache > 0 else 0
+
+        parts.append(
+            f"### Query Routing (non-cache queries)\n"
+            f"- Total queries: **{total}**\n"
+            f"- Cache hits: **{cache_h}**\n"
+            f"- ML Router handled: **{routed}** ({router_pct:.1f}%)\n"
+            f"- Planner fallback: **{fallback}** ({planner_pct:.1f}%)\n"
+            f"- **LLM calls saved:** {routed} (queries that skipped the planner)\n"
+        )
+
+        if confs:
+            import statistics
+            avg_conf = statistics.mean(confs)
+            min_conf = min(confs)
+            max_conf = max(confs)
+            parts.append(
+                f"### Confidence Distribution\n"
+                f"- Average: **{avg_conf:.3f}**\n"
+                f"- Min: {min_conf:.3f} | Max: {max_conf:.3f}\n"
+            )
+
+        lat_with = _router_stats["latencies_with_router"]
+        lat_without = _router_stats["latencies_without_router"]
+        if lat_with:
+            avg_with = statistics.mean(lat_with)
+            parts.append(f"### Latency\n- Avg with ML router: **{avg_with:.0f}ms**\n")
+        if lat_without:
+            avg_without = statistics.mean(lat_without)
+            parts.append(f"- Avg with LLM planner: **{avg_without:.0f}ms**\n")
+        if lat_with and lat_without:
+            reduction = statistics.mean(lat_without) - statistics.mean(lat_with)
+            parts.append(f"- **Latency reduction:** {reduction:.0f}ms\n")
+    else:
+        parts.append("\n*No queries processed yet. Submit queries in the Search tab.*")
+
+    return "\n".join(parts)
 
 
 # ── Build Gradio App ────────────────────────────────────────
@@ -314,7 +448,7 @@ def create_app() -> gr.Blocks:
     """Build the Gradio interface."""
 
     with gr.Blocks(
-        title="PDF Agentic RAG",
+        title="ML-RAG | PDF Agentic RAG",
         theme=gr.themes.Soft(
             primary_hue="indigo",
             secondary_hue="blue",
@@ -327,9 +461,9 @@ def create_app() -> gr.Blocks:
     ) as app:
 
         gr.Markdown(
-            "# 🤖 PDF Agentic RAG\n"
-            "### Enterprise Retrieval-Augmented Generation with Agentic Workflow\n"
-            "*BM25 + Cross-Encoder Reranking • Semantic Caching • LangGraph Orchestration*",
+            "# 🤖 ML-RAG\n"
+            "### PDF Agentic RAG with ML Query-Intent Router\n"
+            "*ML Router • BM25 + Cross-Encoder Reranking • Semantic Caching • LangGraph*",
             elem_classes="main-header",
         )
 
@@ -400,10 +534,10 @@ def create_app() -> gr.Blocks:
 
             # ── Tab 3: Analytics ──
             with gr.Tab("📊 Analytics", id="analytics"):
-                gr.Markdown("### Cache & System Statistics")
-                cache_output = gr.Markdown("Click refresh to see stats")
+                gr.Markdown("### Cache & Router Statistics")
+                stats_output = gr.Markdown("Click refresh to see stats")
                 refresh_btn = gr.Button("🔄 Refresh Stats")
-                refresh_btn.click(fn=get_cache_stats, outputs=[cache_output])
+                refresh_btn.click(fn=get_system_stats, outputs=[stats_output])
 
     return app
 

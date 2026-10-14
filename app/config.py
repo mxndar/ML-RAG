@@ -17,8 +17,8 @@ class Settings(BaseSettings):
 
     # ── Cloud LLM (Groq) ───────────────────────────
     groq_api_key: str = ""
-    planner_model: str = "llama3-8b-8192"
-    generator_model: str = "llama-3.3-70b-versatile"
+    planner_model: str = "qwen/qwen3.8-27b"
+    generator_model: str = "qwen/qwen3.8-27b"
 
     # ── Embedding (semantic cache ONLY) ─────────────────────
     embedding_model: str = "BAAI/bge-small-en-v1.5"
@@ -31,10 +31,16 @@ class Settings(BaseSettings):
     semantic_threshold: float = 0.95
 
     # ── Retrieval ───────────────────────────────────────────
-    max_evidence_tokens: int = 300
-    bm25_top_k: int = 10
-    reranker_top_k: int = 2
+    max_evidence_tokens: int = 600
+    bm25_top_k: int = 15
+    reranker_top_k: int = 4
     max_critic_retries: int = 2
+
+    # ── ML Router ──────────────────────────────────────────────
+    router_enabled: bool = True
+    router_model_type: str = "tfidf_logreg"  # "tfidf_logreg" | "distilbert"
+    router_model_path: str = "app/router/saved_models"
+    router_confidence_threshold: float = 0.75
 
     # ── Chunking ────────────────────────────────────────────
     chunk_similarity_threshold: float = 0.5

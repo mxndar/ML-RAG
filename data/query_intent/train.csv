@@ -1,0 +1,1120 @@
+id,base_instance_id,query,label,tool,template_id,generation_method,is_hard_negative
+0,hn_page_sec_051,What's on page 5 about the methodology?,Page,PageRetriever,hn_page_sec_051,template,True
+1,hn_page_sec_052,Show me page 12 where it discusses the results.,Page,PageRetriever,hn_page_sec_052,template,True
+2,hn_page_sec_054,What does page 8 say about risk factors?,Page,PageRetriever,hn_page_sec_054,template,True
+3,hn_page_sec_055,"Pull up page 15, the part about recommendations.",Page,PageRetriever,hn_page_sec_055,template,True
+4,hn_page_sec_056,Go to page 22 where the conclusion is.,Page,PageRetriever,hn_page_sec_056,template,True
+5,hn_page_sec_057,Fetch page 7 with the executive summary.,Page,PageRetriever,hn_page_sec_057,template,True
+6,hn_page_sec_059,What's on page 10 regarding the scope of work?,Page,PageRetriever,hn_page_sec_059,template,True
+7,hn_page_sec_061,Read page 1 of the abstract.,Page,PageRetriever,hn_page_sec_061,template,True
+8,hn_page_sec_062,Show me page 50 about the appendix.,Page,PageRetriever,hn_page_sec_062,template,True
+9,hn_page_sec_063,What does page 18 in the methodology cover?,Page,PageRetriever,hn_page_sec_063,template,True
+10,hn_page_sec_065,Open page 40 with the terms and conditions.,Page,PageRetriever,hn_page_sec_065,template,True
+11,hn_page_sec_066,What's on page 6 about safety instructions?,Page,PageRetriever,hn_page_sec_066,template,True
+12,hn_page_sec_067,Go to page 33 where it talks about compliance.,Page,PageRetriever,hn_page_sec_067,template,True
+13,hn_page_sec_068,Can I see page 14 of the troubleshooting guide?,Page,PageRetriever,hn_page_sec_068,template,True
+14,hn_page_sec_071,Show page 2 of the introduction section.,Page,PageRetriever,hn_page_sec_071,template,True
+15,hn_page_sec_072,Read page 19 where it covers eligibility.,Page,PageRetriever,hn_page_sec_072,template,True
+16,hn_page_sec_073,"Display page 35, the references part.",Page,PageRetriever,hn_page_sec_073,template,True
+17,hn_page_sec_074,Take me to page 44 about the glossary.,Page,PageRetriever,hn_page_sec_074,template,True
+18,hn_page_sec_075,What's on page 11 about termination?,Page,PageRetriever,hn_page_sec_075,template,True
+19,hn_page_sec_076,I need page 55 with the appendix tables.,Page,PageRetriever,hn_page_sec_076,template,True
+20,hn_page_sec_077,Fetch page 4 about the project objectives.,Page,PageRetriever,hn_page_sec_077,template,True
+21,hn_page_sec_079,What does page 16 cover about warranties?,Page,PageRetriever,hn_page_sec_079,template,True
+22,hn_page_sec_081,Pull up page 21 about dispute resolution.,Page,PageRetriever,hn_page_sec_081,template,True
+23,hn_page_sec_082,Show me page 42 with the budget overview.,Page,PageRetriever,hn_page_sec_082,template,True
+24,hn_page_sec_083,Can I see page 13 about the background?,Page,PageRetriever,hn_page_sec_083,template,True
+25,hn_page_sec_084,What's written on page 37 about assumptions?,Page,PageRetriever,hn_page_sec_084,template,True
+26,hn_page_sec_085,Read page 48 of the closing remarks.,Page,PageRetriever,hn_page_sec_085,template,True
+27,hn_tricky_151,What's on the title page?,Page,PageRetriever,hn_tricky_151,template,True
+28,page_08_1,Display page 1,Page,PageRetriever,page_08,template,False
+29,page_r1_6d6ba06d,Retrieve pages 10 to 12,Page,PageRetriever,page_r1,template,False
+30,page_03_200,Can you pull up page 200,Page,PageRetriever,page_03,template,False
+31,page_03_29,Can you pull up page 29,Page,PageRetriever,page_03,template,False
+32,page_05_27,I need the content from page 27,Page,PageRetriever,page_05,template,False
+33,page_11_49,Read page 49 of this proposal,Page,PageRetriever,page_11,template,False
+34,page_r1_46c992a8,Retrieve pages pages 30 through 32,Page,PageRetriever,page_r1,template,False
+35,page_19_29,Navigate to page 29,Page,PageRetriever,page_19,template,False
+36,page_19_38,Navigate to page 38?,Page,PageRetriever,page_19_var,template,False
+37,page_r2_2a3262c8,Can you show pages 15 through 17,Page,PageRetriever,page_r2,template,False
+38,page_10_1,Take me to page 1,Page,PageRetriever,page_10,template,False
+39,page_11_1,Read page 1 of this brochure,Page,PageRetriever,page_11,template,False
+40,page_04_23,"Go to page 23, please",Page,PageRetriever,page_04,template,False
+41,page_03_3,Can you pull up page three,Page,PageRetriever,page_03,template,False
+42,page_01_43,Show me page 43 of the contract,Page,PageRetriever,page_01,template,False
+43,page_05_39,I need the content from page 39?,Page,PageRetriever,page_05_var,template,False
+44,page_09_35,Fetch page number 35,Page,PageRetriever,page_09,template,False
+45,page_13_38,Jump to page 38,Page,PageRetriever,page_13,template,False
+46,page_14_8,I want to see page 8?,Page,PageRetriever,page_14_var,template,False
+47,page_r3_3059fba9,Show me 5–7,Page,PageRetriever,page_r3,template,False
+48,page_04_1,"Go to page one, please",Page,PageRetriever,page_04,template,False
+49,page_03_60,Can you pull up page 60,Page,PageRetriever,page_03,template,False
+50,page_06_6,Open page 6 of the proposal,Page,PageRetriever,page_06,template,False
+51,page_16_4,Pull the text from page four,Page,PageRetriever,page_16,template,False
+52,page_16_36,Pull the text from page 36,Page,PageRetriever,page_16,template,False
+53,page_15_36,Give me everything on page 36,Page,PageRetriever,page_15,template,False
+54,page_01_35,Show me page 35 of the contract,Page,PageRetriever,page_01,template,False
+55,page_11_4,Read page 4 of this PDF,Page,PageRetriever,page_11,template,False
+56,page_16_28,Pull the text from page 28,Page,PageRetriever,page_16,template,False
+57,page_18_7,Let me see page seven of the PDF,Page,PageRetriever,page_18,template,False
+58,page_13_23,Jump to page 23?,Page,PageRetriever,page_13_var,template,False
+59,page_10_35,Take me to page 35,Page,PageRetriever,page_10,template,False
+60,page_11_23,Read page 23 of this PDF,Page,PageRetriever,page_11,template,False
+61,page_01_60,Show me page 60 of the whitepaper,Page,PageRetriever,page_01,template,False
+62,page_09_28,Fetch page number 28,Page,PageRetriever,page_09,template,False
+63,page_12_3,What information is on page 3,Page,PageRetriever,page_12,template,False
+64,page_03_44,Can you pull up page 44,Page,PageRetriever,page_03,template,False
+65,page_r1_315de471,Retrieve pages pages 7 through 9,Page,PageRetriever,page_r1,template,False
+66,page_07_19,What does it say on page 19,Page,PageRetriever,page_07,template,False
+67,page_05_6,I need the content from page six,Page,PageRetriever,page_05,template,False
+68,page_20_42,What content appears on page 42,Page,PageRetriever,page_20,template,False
+69,page_04_2,"Go to page 2, please",Page,PageRetriever,page_04,template,False
+70,page_09_2,Fetch page number two,Page,PageRetriever,page_09,template,False
+71,page_o3_first,What does the first page say,Page,PageRetriever,page_o3,template,False
+72,page_05_60,I need the content from page 60,Page,PageRetriever,page_05,template,False
+73,page_02_9,What's on page 9,Page,PageRetriever,page_02,template,False
+74,page_05_150,I need the content from page 150,Page,PageRetriever,page_05,template,False
+75,page_13_14,Jump to page fourteen,Page,PageRetriever,page_13,template,False
+76,page_12_22,What information is on page 22,Page,PageRetriever,page_12,template,False
+77,page_09_13,Fetch page number 13,Page,PageRetriever,page_09,template,False
+78,page_14_35,I want to see page 35,Page,PageRetriever,page_14,template,False
+79,page_r4_7136db5f,Get me the content from 1–3,Page,PageRetriever,page_r4,template,False
+80,page_03_33,Can you pull up page 33,Page,PageRetriever,page_03,template,False
+81,page_o3_ninth,What does the ninth page say?,Page,PageRetriever,page_o3_var,template,False
+82,page_r1_98fbe747,Retrieve pages 100–102,Page,PageRetriever,page_r1,template,False
+83,page_18_29,Let me see page 29 of the proposal,Page,PageRetriever,page_18,template,False
+84,page_15_15,Give me everything on page 15,Page,PageRetriever,page_15,template,False
+85,page_17_7,Could you show me page 7,Page,PageRetriever,page_17,template,False
+86,page_18_25,Let me see page 25 of the report,Page,PageRetriever,page_18,template,False
+87,page_06_75,Open page 75 of the spec sheet,Page,PageRetriever,page_06,template,False
+88,page_14_39,I want to see page 39,Page,PageRetriever,page_14,template,False
+89,page_04_9,"Go to page nine, please",Page,PageRetriever,page_04,template,False
+90,page_09_26,Fetch page number 26,Page,PageRetriever,page_09,template,False
+91,page_01_30,Show me page 30 of the brochure,Page,PageRetriever,page_01,template,False
+92,page_12_19,What information is on page 19,Page,PageRetriever,page_12,template,False
+93,page_10_41,Take me to page 41,Page,PageRetriever,page_10,template,False
+94,page_18_19,Let me see page 19 of the PDF,Page,PageRetriever,page_18,template,False
+95,page_s3,What's on the very last page of the document,Page,PageRetriever,page_s3,template,False
+96,page_10_2,Take me to page 2,Page,PageRetriever,page_10,template,False
+97,page_11_9,Read page nine of this policy document?,Page,PageRetriever,page_11_var,template,False
+98,page_19_44,Navigate to page 44,Page,PageRetriever,page_19,template,False
+99,page_o2_fifth,Show me the fifth page of the manual,Page,PageRetriever,page_o2,template,False
+100,page_o1_eighth,What's written on the eighth page,Page,PageRetriever,page_o1,template,False
+101,page_o3_twelfth,What does the twelfth page say,Page,PageRetriever,page_o3,template,False
+102,page_10_13,Take me to page thirteen,Page,PageRetriever,page_10,template,False
+103,page_20_44,What content appears on page 44,Page,PageRetriever,page_20,template,False
+104,page_06_25,Open page 25 of the whitepaper,Page,PageRetriever,page_06,template,False
+105,page_14_50,I want to see page 50,Page,PageRetriever,page_14,template,False
+106,page_09_1,Fetch page number 1,Page,PageRetriever,page_09,template,False
+107,page_06_4,Open page four of the proposal,Page,PageRetriever,page_06,template,False
+108,page_12_5,What information is on page five,Page,PageRetriever,page_12,template,False
+109,page_10_9,Take me to page 9,Page,PageRetriever,page_10,template,False
+110,page_r4_29856ab2,Get me the content from 45–47?,Page,PageRetriever,page_r4_var,template,False
+111,page_r2_46c992a8,Can you show pages 30 through 32,Page,PageRetriever,page_r2,template,False
+112,page_03_200,Can you pull up page 200?,Page,PageRetriever,page_03_var,template,False
+113,page_13_38,Jump to page 38?,Page,PageRetriever,page_13_var,template,False
+114,page_11_7,Read page seven of this policy document,Page,PageRetriever,page_11,template,False
+115,page_08_26,Display page 26,Page,PageRetriever,page_08,template,False
+116,page_12_75,What information is on page 75,Page,PageRetriever,page_12,template,False
+117,page_04_30,"Go to page 30, please",Page,PageRetriever,page_04,template,False
+118,page_17_9,Could you show me page nine,Page,PageRetriever,page_17,template,False
+119,page_16_41,Pull the text from page 41,Page,PageRetriever,page_16,template,False
+120,page_16_35,Pull the text from page 35,Page,PageRetriever,page_16,template,False
+121,page_r4_2a3262c8,Get me the content from pages 15 through 17?,Page,PageRetriever,page_r4_var,template,False
+122,page_r2_315de471,Can you show pages 7 through 9,Page,PageRetriever,page_r2,template,False
+123,page_r1_5061de45,Retrieve pages 20 to 22,Page,PageRetriever,page_r1,template,False
+124,page_20_15,What content appears on page 15,Page,PageRetriever,page_20,template,False
+125,page_12_26,What information is on page 26,Page,PageRetriever,page_12,template,False
+126,page_15_30,Give me everything on page 30,Page,PageRetriever,page_15,template,False
+127,page_s1,What's the content on the last page,Page,PageRetriever,page_s1,template,False
+128,page_r3_315de471,Show me pages 7 through 9,Page,PageRetriever,page_r3,template,False
+129,page_o1_seventh,What's written on the seventh page,Page,PageRetriever,page_o1,template,False
+130,page_07_55,What does it say on page 55,Page,PageRetriever,page_07,template,False
+131,page_19_43,Navigate to page 43,Page,PageRetriever,page_19,template,False
+132,page_13_8,Jump to page 8,Page,PageRetriever,page_13,template,False
+133,page_11_8,Read page 8 of this brochure,Page,PageRetriever,page_11,template,False
+134,page_s2,Show me the first page?,Page,PageRetriever,page_s2_var,template,False
+135,page_05_60,I need the content from page 60?,Page,PageRetriever,page_05_var,template,False
+136,page_01_4,Show me page 4 of the whitepaper?,Page,PageRetriever,page_01_var,template,False
+137,page_12_29,What information is on page 29,Page,PageRetriever,page_12,template,False
+138,page_16_42,Pull the text from page 42,Page,PageRetriever,page_16,template,False
+139,page_16_23,Pull the text from page 23,Page,PageRetriever,page_16,template,False
+140,page_02_75,What's on page 75,Page,PageRetriever,page_02,template,False
+141,page_o2_sixth,Show me the sixth page of the document,Page,PageRetriever,page_o2,template,False
+142,page_r4_2a3262c8,Get me the content from pages 15 through 17,Page,PageRetriever,page_r4,template,False
+143,page_09_13,Fetch page number 13?,Page,PageRetriever,page_09_var,template,False
+144,page_04_44,"Go to page 44, please",Page,PageRetriever,page_04,template,False
+145,page_17_300,Could you show me page 300?,Page,PageRetriever,page_17_var,template,False
+146,page_o3_20th,What does the 20th page say,Page,PageRetriever,page_o3,template,False
+147,page_19_18,Navigate to page 18,Page,PageRetriever,page_19,template,False
+148,page_18_39,Let me see page 39 of the brochure,Page,PageRetriever,page_18,template,False
+149,page_02_6,What's on page six,Page,PageRetriever,page_02,template,False
+150,page_r2_3059fba9,Can you show 5–7,Page,PageRetriever,page_r2,template,False
+151,page_12_1,What information is on page 1,Page,PageRetriever,page_12,template,False
+152,page_r4_29856ab2,Get me the content from 45–47,Page,PageRetriever,page_r4,template,False
+153,page_01_2,Show me page 2 of the whitepaper,Page,PageRetriever,page_01,template,False
+154,page_08_200,Display page 200,Page,PageRetriever,page_08,template,False
+155,page_15_29,Give me everything on page 29,Page,PageRetriever,page_15,template,False
+156,page_15_33,Give me everything on page 33,Page,PageRetriever,page_15,template,False
+157,page_r3_29856ab2,Show me 45–47,Page,PageRetriever,page_r3,template,False
+158,page_18_46,Let me see page 46 of the manual,Page,PageRetriever,page_18,template,False
+159,page_13_49,Jump to page 49,Page,PageRetriever,page_13,template,False
+160,page_14_26,I want to see page 26,Page,PageRetriever,page_14,template,False
+161,page_17_38,Could you show me page 38,Page,PageRetriever,page_17,template,False
+162,page_05_22,I need the content from page 22,Page,PageRetriever,page_05,template,False
+163,page_10_30,Take me to page 30,Page,PageRetriever,page_10,template,False
+164,page_01_36,Show me page 36 of the report,Page,PageRetriever,page_01,template,False
+165,page_o3_ninth,What does the ninth page say,Page,PageRetriever,page_o3,template,False
+166,page_03_39,Can you pull up page 39,Page,PageRetriever,page_03,template,False
+167,page_09_44,Fetch page number 44,Page,PageRetriever,page_09,template,False
+168,page_12_13,What information is on page 13,Page,PageRetriever,page_12,template,False
+169,page_20_5,What content appears on page 5,Page,PageRetriever,page_20,template,False
+170,page_04_29,"Go to page 29, please",Page,PageRetriever,page_04,template,False
+171,page_10_44,Take me to page 44,Page,PageRetriever,page_10,template,False
+172,page_09_60,Fetch page number 60,Page,PageRetriever,page_09,template,False
+173,page_13_50,Jump to page 50,Page,PageRetriever,page_13,template,False
+174,page_06_60,Open page 60 of the whitepaper,Page,PageRetriever,page_06,template,False
+175,page_s3,What's on the very last page of the document?,Page,PageRetriever,page_s3_var,template,False
+176,page_20_16,What content appears on page 16,Page,PageRetriever,page_20,template,False
+177,page_14_18,I want to see page 18,Page,PageRetriever,page_14,template,False
+178,page_13_6,Jump to page 6,Page,PageRetriever,page_13,template,False
+179,page_r4_221647c5,Get me the content from 10–12,Page,PageRetriever,page_r4,template,False
+180,page_19_50,Navigate to page fifty,Page,PageRetriever,page_19,template,False
+181,page_r2_7136db5f,Can you show 1–3,Page,PageRetriever,page_r2,template,False
+182,page_01_46,Show me page 46 of the report,Page,PageRetriever,page_01,template,False
+183,page_05_19,I need the content from page 19,Page,PageRetriever,page_05,template,False
+184,page_r3_46c992a8,Show me pages 30 through 32,Page,PageRetriever,page_r3,template,False
+185,page_15_1,Give me everything on page 1,Page,PageRetriever,page_15,template,False
+186,page_05_28,I need the content from page 28,Page,PageRetriever,page_05,template,False
+187,page_19_38,Navigate to page 38,Page,PageRetriever,page_19,template,False
+188,page_20_44,What content appears on page 44?,Page,PageRetriever,page_20_var,template,False
+189,page_07_6,What does it say on page six,Page,PageRetriever,page_07,template,False
+190,page_12_50,What information is on page fifty,Page,PageRetriever,page_12,template,False
+191,page_18_19,Let me see page 19 of the PDF?,Page,PageRetriever,page_18_var,template,False
+192,page_13_42,Jump to page 42,Page,PageRetriever,page_13,template,False
+193,page_o1_2nd,What's written on the 2nd page,Page,PageRetriever,page_o1,template,False
+194,page_01_4,Show me page 4 of the whitepaper,Page,PageRetriever,page_01,template,False
+195,page_06_23,Open page 23 of the manual,Page,PageRetriever,page_06,template,False
+196,page_13_150,Jump to page 150,Page,PageRetriever,page_13,template,False
+197,page_20_50,What content appears on page 50?,Page,PageRetriever,page_20_var,template,False
+198,page_19_60,Navigate to page 60?,Page,PageRetriever,page_19_var,template,False
+199,page_18_13,Let me see page thirteen of the guide,Page,PageRetriever,page_18,template,False
+200,page_08_6,Display page 6,Page,PageRetriever,page_08,template,False
+201,page_o3_sixth,What does the sixth page say,Page,PageRetriever,page_o3,template,False
+202,page_02_49,What's on page 49,Page,PageRetriever,page_02,template,False
+203,page_13_4,Jump to page 4,Page,PageRetriever,page_13,template,False
+204,page_o3_eighth,What does the eighth page say,Page,PageRetriever,page_o3,template,False
+205,page_16_49,Pull the text from page 49?,Page,PageRetriever,page_16_var,template,False
+206,page_05_300,I need the content from page 300,Page,PageRetriever,page_05,template,False
+207,page_18_31,Let me see page 31 of the proposal,Page,PageRetriever,page_18,template,False
+208,page_07_300,What does it say on page 300,Page,PageRetriever,page_07,template,False
+209,page_02_7,What's on page 7,Page,PageRetriever,page_02,template,False
+210,page_15_14,Give me everything on page fourteen?,Page,PageRetriever,page_15_var,template,False
+211,page_09_2,Fetch page number two?,Page,PageRetriever,page_09_var,template,False
+212,page_19_22,Navigate to page 22,Page,PageRetriever,page_19,template,False
+213,page_08_33,Display page 33,Page,PageRetriever,page_08,template,False
+214,page_05_150,I need the content from page 150?,Page,PageRetriever,page_05_var,template,False
+215,page_09_38,Fetch page number 38,Page,PageRetriever,page_09,template,False
+216,page_o2_2nd,Show me the 2nd page of the spec sheet,Page,PageRetriever,page_o2,template,False
+217,page_09_200,Fetch page number 200,Page,PageRetriever,page_09,template,False
+218,page_16_33,Pull the text from page 33,Page,PageRetriever,page_16,template,False
+219,page_r1_221647c5,Retrieve pages 10–12,Page,PageRetriever,page_r1,template,False
+220,page_r2_29856ab2,Can you show 45–47,Page,PageRetriever,page_r2,template,False
+221,page_09_50,Fetch page number fifty,Page,PageRetriever,page_09,template,False
+222,page_07_55,What does it say on page 55?,Page,PageRetriever,page_07_var,template,False
+223,page_05_16,I need the content from page 16?,Page,PageRetriever,page_05_var,template,False
+224,page_05_15,I need the content from page fifteen,Page,PageRetriever,page_05,template,False
+225,page_08_16,Display page 16?,Page,PageRetriever,page_08_var,template,False
+226,page_16_41,Pull the text from page 41?,Page,PageRetriever,page_16_var,template,False
+227,page_02_18,What's on page 18,Page,PageRetriever,page_02,template,False
+228,page_07_6,What does it say on page six?,Page,PageRetriever,page_07_var,template,False
+229,page_18_30,Let me see page 30 of the manual,Page,PageRetriever,page_18,template,False
+230,page_18_9,Let me see page nine of the guide,Page,PageRetriever,page_18,template,False
+231,page_04_300,"Go to page 300, please",Page,PageRetriever,page_04,template,False
+232,page_16_11,Pull the text from page eleven,Page,PageRetriever,page_16,template,False
+233,page_01_3,Show me page 3 of the brochure?,Page,PageRetriever,page_01_var,template,False
+234,page_15_23,Give me everything on page 23,Page,PageRetriever,page_15,template,False
+235,page_10_33,Take me to page 33,Page,PageRetriever,page_10,template,False
+236,page_03_300,Can you pull up page 300,Page,PageRetriever,page_03,template,False
+237,page_08_16,Display page 16,Page,PageRetriever,page_08,template,False
+238,page_14_3,I want to see page three,Page,PageRetriever,page_14,template,False
+239,page_o2_third,Show me the third page of the handbook,Page,PageRetriever,page_o2,template,False
+240,page_16_49,Pull the text from page 49,Page,PageRetriever,page_16,template,False
+241,page_13_50,Jump to page 50?,Page,PageRetriever,page_13_var,template,False
+242,page_15_14,Give me everything on page fourteen,Page,PageRetriever,page_15,template,False
+243,page_06_300,Open page 300 of the proposal,Page,PageRetriever,page_06,template,False
+244,page_07_60,What does it say on page 60,Page,PageRetriever,page_07,template,False
+245,page_14_41,I want to see page 41,Page,PageRetriever,page_14,template,False
+246,page_16_30,Pull the text from page 30,Page,PageRetriever,page_16,template,False
+247,page_15_39,Give me everything on page 39,Page,PageRetriever,page_15,template,False
+248,page_10_40,Take me to page 40,Page,PageRetriever,page_10,template,False
+249,page_o1_4th,What's written on the 4th page,Page,PageRetriever,page_o1,template,False
+250,page_18_16,Let me see page 16 of the proposal,Page,PageRetriever,page_18,template,False
+251,page_20_75,What content appears on page 75?,Page,PageRetriever,page_20_var,template,False
+252,page_05_39,I need the content from page 39,Page,PageRetriever,page_05,template,False
+253,page_09_200,Fetch page number 200?,Page,PageRetriever,page_09_var,template,False
+254,page_13_23,Jump to page 23,Page,PageRetriever,page_13,template,False
+255,page_r2_8897798e,Can you show pages 1 through 3,Page,PageRetriever,page_r2,template,False
+256,page_06_49,Open page 49 of the manual,Page,PageRetriever,page_06,template,False
+257,page_20_29,What content appears on page 29,Page,PageRetriever,page_20,template,False
+258,page_11_40,Read page 40 of this policy document,Page,PageRetriever,page_11,template,False
+259,page_o3_2nd,What does the 2nd page say,Page,PageRetriever,page_o3,template,False
+260,page_17_300,Could you show me page 300,Page,PageRetriever,page_17,template,False
+261,page_15_300,Give me everything on page 300,Page,PageRetriever,page_15,template,False
+262,page_20_6,What content appears on page six,Page,PageRetriever,page_20,template,False
+263,page_11_28,Read page 28 of this brochure,Page,PageRetriever,page_11,template,False
+264,page_o2_last,Show me the last page of the policy document,Page,PageRetriever,page_o2,template,False
+265,page_20_50,What content appears on page 50,Page,PageRetriever,page_20,template,False
+266,page_11_14,Read page 14 of this brochure,Page,PageRetriever,page_11,template,False
+267,page_09_39,Fetch page number 39,Page,PageRetriever,page_09,template,False
+268,page_01_300,Show me page 300 of the PDF,Page,PageRetriever,page_01,template,False
+269,page_o3_10th,What does the 10th page say,Page,PageRetriever,page_o3,template,False
+270,page_04_60,"Go to page 60, please",Page,PageRetriever,page_04,template,False
+271,page_04_25,"Go to page twenty-five, please",Page,PageRetriever,page_04,template,False
+272,page_o1_1st,What's written on the 1st page,Page,PageRetriever,page_o1,template,False
+273,page_11_43,Read page 43 of this policy document,Page,PageRetriever,page_11,template,False
+274,page_18_28,Let me see page 28 of the report,Page,PageRetriever,page_18,template,False
+275,page_14_8,I want to see page 8,Page,PageRetriever,page_14,template,False
+276,page_20_49,What content appears on page 49,Page,PageRetriever,page_20,template,False
+277,page_09_55,Fetch page number 55,Page,PageRetriever,page_09,template,False
+278,page_12_40,What information is on page 40,Page,PageRetriever,page_12,template,False
+279,page_04_48,"Go to page 48, please",Page,PageRetriever,page_04,template,False
+280,page_08_19,Display page 19,Page,PageRetriever,page_08,template,False
+281,hn_sec_gen_004,Summarize the Confidentiality Clause section.,Section,SectionRetriever,hn_sec_gen_004,template,True
+282,hn_sec_gen_005,What does the Governing Law part cover?,Section,SectionRetriever,hn_sec_gen_005,template,True
+283,hn_sec_gen_006,Explain the Eligibility Criteria section.,Section,SectionRetriever,hn_sec_gen_006,template,True
+284,hn_sec_gen_007,What information is in the Disclaimer?,Section,SectionRetriever,hn_sec_gen_007,template,True
+285,hn_sec_gen_008,Walk me through the Safety Instructions section.,Section,SectionRetriever,hn_sec_gen_008,template,True
+286,hn_sec_gen_009,What is in the Executive Summary?,Section,SectionRetriever,hn_sec_gen_009,template,True
+287,hn_sec_gen_011,Break down the Risk Factors section.,Section,SectionRetriever,hn_sec_gen_011,template,True
+288,hn_sec_gen_012,What's written in the Financial Highlights?,Section,SectionRetriever,hn_sec_gen_012,template,True
+289,hn_sec_gen_013,Give me the key points from the Methodology.,Section,SectionRetriever,hn_sec_gen_013,template,True
+290,hn_sec_gen_014,What's discussed in the Literature Review?,Section,SectionRetriever,hn_sec_gen_014,template,True
+291,hn_sec_gen_015,Recap the Terms and Conditions.,Section,SectionRetriever,hn_sec_gen_015,template,True
+292,hn_sec_gen_016,What does the Non-Disclosure section state?,Section,SectionRetriever,hn_sec_gen_016,template,True
+293,hn_sec_gen_017,Tell me what's in the Assumptions section.,Section,SectionRetriever,hn_sec_gen_017,template,True
+294,hn_sec_gen_018,What does the Glossary define?,Section,SectionRetriever,hn_sec_gen_018,template,True
+295,hn_sec_gen_020,Show me what's under Recommendations.,Section,SectionRetriever,hn_sec_gen_020,template,True
+296,hn_sec_gen_021,What are the key points in the Results section?,Section,SectionRetriever,hn_sec_gen_021,template,True
+297,hn_sec_gen_022,Does the Discussion section mention any limitations?,Section,SectionRetriever,hn_sec_gen_022,template,True
+298,hn_sec_gen_023,What's the gist of the Installation Guide?,Section,SectionRetriever,hn_sec_gen_023,template,True
+299,hn_page_sec_086,What does the methodology part say about sampling?,Section,SectionRetriever,hn_page_sec_086,template,True
+300,hn_page_sec_087,Tell me about the results in the discussion chapter.,Section,SectionRetriever,hn_page_sec_087,template,True
+301,hn_page_sec_089,Explain the recommendations section's key findings.,Section,SectionRetriever,hn_page_sec_089,template,True
+302,hn_page_sec_091,Summarize the executive summary's main points.,Section,SectionRetriever,hn_page_sec_091,template,True
+303,hn_page_sec_092,How are limitations addressed in the limitations section?,Section,SectionRetriever,hn_page_sec_092,template,True
+304,hn_page_sec_093,What does the scope of work section specify about deliverables?,Section,SectionRetriever,hn_page_sec_093,template,True
+305,hn_page_sec_094,Walk me through the warranty section's coverage.,Section,SectionRetriever,hn_page_sec_094,template,True
+306,hn_page_sec_095,What financial data is in the financial highlights section?,Section,SectionRetriever,hn_page_sec_095,template,True
+307,hn_tricky_146,Does this contract have a section on liability?,Section,SectionRetriever,hn_tricky_146,template,True
+308,hn_tricky_147,Is there a section about data privacy?,Section,SectionRetriever,hn_tricky_147,template,True
+309,hn_tricky_148,Which section covers employee benefits?,Section,SectionRetriever,hn_tricky_148,template,True
+310,hn_tricky_149,Where is the section on compliance?,Section,SectionRetriever,hn_tricky_149,template,True
+311,sec_16_d95867de,What's the gist of the References,Section,SectionRetriever,sec_16,template,False
+312,sec_09_b10f0c75,What are the key points in Warranty?,Section,SectionRetriever,sec_09_var,template,False
+313,sec_02_97d8f56b,Summarize the Definitions,Section,SectionRetriever,sec_02,template,False
+314,sec_08_eed9474f,Walk me through the Discussion section?,Section,SectionRetriever,sec_08_var,template,False
+315,sec_10_6f8b794f,Explain what's written in the Conclusion?,Section,SectionRetriever,sec_10_var,template,False
+316,sec_13_231cf4c7,What details are in the Troubleshooting,Section,SectionRetriever,sec_13,template,False
+317,sec_16_cc299f69,What's the gist of the Financial Highlights,Section,SectionRetriever,sec_16,template,False
+318,sec_13_99b60b57,What details are in the Termination Clause,Section,SectionRetriever,sec_13,template,False
+319,sec_03_84ffd62e,Can you explain the Acknowledgments part,Section,SectionRetriever,sec_03,template,False
+320,sec_19_84ffd62e,What information is under Acknowledgments,Section,SectionRetriever,sec_19,template,False
+321,sec_10_30fa36cb,Explain what's written in the Safety Instructions?,Section,SectionRetriever,sec_10_var,template,False
+322,sec_08_cff1be7f,Walk me through the Appendix section,Section,SectionRetriever,sec_08,template,False
+323,sec_10_d811a69c,Explain what's written in the Risk Factors,Section,SectionRetriever,sec_10,template,False
+324,sec_13_97abaa92,What details are in the Terms and Conditions,Section,SectionRetriever,sec_13,template,False
+325,sec_06_20c51b5f,Give me a summary of the Methods,Section,SectionRetriever,sec_06,template,False
+326,sec_17_ad0a802e,Recap the Disclaimer section,Section,SectionRetriever,sec_17,template,False
+327,sec_10_d03cbf06,Explain what's written in the Objectives,Section,SectionRetriever,sec_10,template,False
+328,sec_18_e646e16b,Pull up the Limitations part of the guide,Section,SectionRetriever,sec_18,template,False
+329,sec_18_3b878279,Pull up the Overview part of the policy document,Section,SectionRetriever,sec_18,template,False
+330,sec_04_3b878279,Tell me about the Overview section,Section,SectionRetriever,sec_04,template,False
+331,sec_06_697340d9,Give me a summary of the Installation Guide,Section,SectionRetriever,sec_06,template,False
+332,sec_04_99b60b57,Tell me about the Termination Clause section?,Section,SectionRetriever,sec_04_var,template,False
+333,sec_02_6f8b794f,Summarize the Conclusion,Section,SectionRetriever,sec_02,template,False
+334,sec_17_31d109d1,Recap the Glossary section,Section,SectionRetriever,sec_17,template,False
+335,sec_16_d03cbf06,What's the gist of the Objectives,Section,SectionRetriever,sec_16,template,False
+336,sec_08_1fe917b0,Walk me through the FAQ section,Section,SectionRetriever,sec_08,template,False
+337,sec_17_99b60b57,Recap the Termination Clause section,Section,SectionRetriever,sec_17,template,False
+338,sec_16_b098f06a,What's the gist of the Literature Review,Section,SectionRetriever,sec_16,template,False
+339,sec_05_d03cbf06,What's covered under Objectives,Section,SectionRetriever,sec_05,template,False
+340,sec_10_30fa36cb,Explain what's written in the Safety Instructions,Section,SectionRetriever,sec_10,template,False
+341,sec_04_2ba0c1d2,Tell me about the Methodology section?,Section,SectionRetriever,sec_04_var,template,False
+342,sec_09_2ba0c1d2,What are the key points in Methodology,Section,SectionRetriever,sec_09,template,False
+343,sec_17_b098f06a,Recap the Literature Review section,Section,SectionRetriever,sec_17,template,False
+344,sec_08_84ffd62e,Walk me through the Acknowledgments section,Section,SectionRetriever,sec_08,template,False
+345,sec_20_307e046a,Does the Governing Law mention anything specific,Section,SectionRetriever,sec_20,template,False
+346,sec_12_cc299f69,Show me the Financial Highlights section,Section,SectionRetriever,sec_12,template,False
+347,sec_17_2ba0c1d2,Recap the Methodology section?,Section,SectionRetriever,sec_17_var,template,False
+348,sec_08_231cf4c7,Walk me through the Troubleshooting section,Section,SectionRetriever,sec_08,template,False
+349,sec_19_5259ae4a,What information is under Recommendations,Section,SectionRetriever,sec_19,template,False
+350,sec_04_2ba0c1d2,Tell me about the Methodology section,Section,SectionRetriever,sec_04,template,False
+351,sec_05_5259ae4a,What's covered under Recommendations,Section,SectionRetriever,sec_05,template,False
+352,sec_10_aed402c3,Explain what's written in the Related Work,Section,SectionRetriever,sec_10,template,False
+353,sec_12_99b60b57,Show me the Termination Clause section,Section,SectionRetriever,sec_12,template,False
+354,sec_05_d811a69c,What's covered under Risk Factors,Section,SectionRetriever,sec_05,template,False
+355,sec_17_827d315c,Recap the Confidentiality Clause section,Section,SectionRetriever,sec_17,template,False
+356,sec_08_6f8b794f,Walk me through the Conclusion section,Section,SectionRetriever,sec_08,template,False
+357,sec_12_d811a69c,Show me the Risk Factors section,Section,SectionRetriever,sec_12,template,False
+358,sec_11_1e487f88,What is discussed in the Scope of Work chapter,Section,SectionRetriever,sec_11,template,False
+359,sec_19_b098f06a,What information is under Literature Review,Section,SectionRetriever,sec_19,template,False
+360,sec_08_e646e16b,Walk me through the Limitations section,Section,SectionRetriever,sec_08,template,False
+361,sec_11_fd69c5cf,What is discussed in the Results chapter,Section,SectionRetriever,sec_11,template,False
+362,sec_13_1e487f88,What details are in the Scope of Work,Section,SectionRetriever,sec_13,template,False
+363,sec_14_b098f06a,How is Literature Review described in the document,Section,SectionRetriever,sec_14,template,False
+364,sec_10_a9ded1e5,Explain what's written in the Background,Section,SectionRetriever,sec_10,template,False
+365,sec_17_84ffd62e,Recap the Acknowledgments section,Section,SectionRetriever,sec_17,template,False
+366,sec_01_bd4bc160,What does the Eligibility Criteria section say,Section,SectionRetriever,sec_01,template,False
+367,sec_19_31d109d1,What information is under Glossary,Section,SectionRetriever,sec_19,template,False
+368,sec_14_1fe917b0,How is FAQ described in the document,Section,SectionRetriever,sec_14,template,False
+369,sec_11_1fe917b0,What is discussed in the FAQ chapter,Section,SectionRetriever,sec_11,template,False
+370,sec_02_84ffd62e,Summarize the Acknowledgments,Section,SectionRetriever,sec_02,template,False
+371,sec_16_97abaa92,What's the gist of the Terms and Conditions,Section,SectionRetriever,sec_16,template,False
+372,sec_18_a9ded1e5,Pull up the Background part of the policy document?,Section,SectionRetriever,sec_18_var,template,False
+373,sec_04_307e046a,Tell me about the Governing Law section?,Section,SectionRetriever,sec_04_var,template,False
+374,sec_15_bd4bc160,Break down the Eligibility Criteria for me,Section,SectionRetriever,sec_15,template,False
+375,sec_19_231cf4c7,What information is under Troubleshooting,Section,SectionRetriever,sec_19,template,False
+376,sec_09_b10f0c75,What are the key points in Warranty,Section,SectionRetriever,sec_09,template,False
+377,sec_10_1e487f88,Explain what's written in the Scope of Work,Section,SectionRetriever,sec_10,template,False
+378,sec_16_5259ae4a,What's the gist of the Recommendations,Section,SectionRetriever,sec_16,template,False
+379,sec_19_1e487f88,What information is under Scope of Work,Section,SectionRetriever,sec_19,template,False
+380,sec_04_99b60b57,Tell me about the Termination Clause section,Section,SectionRetriever,sec_04,template,False
+381,sec_17_231cf4c7,Recap the Troubleshooting section,Section,SectionRetriever,sec_17,template,False
+382,sec_14_cc299f69,How is Financial Highlights described in the document,Section,SectionRetriever,sec_14,template,False
+383,sec_10_eed9474f,Explain what's written in the Discussion,Section,SectionRetriever,sec_10,template,False
+384,sec_02_658fb5ef,Summarize the Assumptions,Section,SectionRetriever,sec_02,template,False
+385,sec_03_658fb5ef,Can you explain the Assumptions part,Section,SectionRetriever,sec_03,template,False
+386,sec_14_cff1be7f,How is Appendix described in the document,Section,SectionRetriever,sec_14,template,False
+387,sec_01_697340d9,What does the Installation Guide section say,Section,SectionRetriever,sec_01,template,False
+388,sec_04_307e046a,Tell me about the Governing Law section,Section,SectionRetriever,sec_04,template,False
+389,sec_05_3b878279,What's covered under Overview,Section,SectionRetriever,sec_05,template,False
+390,sec_10_1e487f88,Explain what's written in the Scope of Work?,Section,SectionRetriever,sec_10_var,template,False
+391,sec_13_97d8f56b,What details are in the Definitions,Section,SectionRetriever,sec_13,template,False
+392,sec_01_cff1be7f,What does the Appendix section say,Section,SectionRetriever,sec_01,template,False
+393,sec_17_84ffd62e,Recap the Acknowledgments section?,Section,SectionRetriever,sec_17_var,template,False
+394,sec_06_97d8f56b,Give me a summary of the Definitions,Section,SectionRetriever,sec_06,template,False
+395,sec_08_d03cbf06,Walk me through the Objectives section,Section,SectionRetriever,sec_08,template,False
+396,sec_18_1fe917b0,Pull up the FAQ part of the policy document,Section,SectionRetriever,sec_18,template,False
+397,sec_08_eed9474f,Walk me through the Discussion section,Section,SectionRetriever,sec_08,template,False
+398,sec_03_e353dbe4,Can you explain the Abstract part,Section,SectionRetriever,sec_03,template,False
+399,sec_07_d95867de,What does the document say in its References?,Section,SectionRetriever,sec_07_var,template,False
+400,sec_02_97abaa92,Summarize the Terms and Conditions,Section,SectionRetriever,sec_02,template,False
+401,sec_12_5259ae4a,Show me the Recommendations section,Section,SectionRetriever,sec_12,template,False
+402,sec_09_6f8b794f,What are the key points in Conclusion,Section,SectionRetriever,sec_09,template,False
+403,sec_03_1fe917b0,Can you explain the FAQ part,Section,SectionRetriever,sec_03,template,False
+404,sec_20_eed9474f,Does the Discussion mention anything specific,Section,SectionRetriever,sec_20,template,False
+405,sec_14_b10f0c75,How is Warranty described in the document,Section,SectionRetriever,sec_14,template,False
+406,sec_03_ad0a802e,Can you explain the Disclaimer part,Section,SectionRetriever,sec_03,template,False
+407,sec_17_1fe917b0,Recap the FAQ section,Section,SectionRetriever,sec_17,template,False
+408,sec_07_d95867de,What does the document say in its References,Section,SectionRetriever,sec_07,template,False
+409,sec_01_20c51b5f,What does the Methods section say,Section,SectionRetriever,sec_01,template,False
+410,sec_15_eed9474f,Break down the Discussion for me,Section,SectionRetriever,sec_15,template,False
+411,sec_17_307e046a,Recap the Governing Law section,Section,SectionRetriever,sec_17,template,False
+412,sec_03_b098f06a,Can you explain the Literature Review part,Section,SectionRetriever,sec_03,template,False
+413,sec_07_e353dbe4,What does the document say in its Abstract,Section,SectionRetriever,sec_07,template,False
+414,sec_11_cc299f69,What is discussed in the Financial Highlights chapter,Section,SectionRetriever,sec_11,template,False
+415,sec_03_97abaa92,Can you explain the Terms and Conditions part,Section,SectionRetriever,sec_03,template,False
+416,sec_19_cc299f69,What information is under Financial Highlights,Section,SectionRetriever,sec_19,template,False
+417,sec_18_97d8f56b,Pull up the Definitions part of the specification,Section,SectionRetriever,sec_18,template,False
+418,sec_15_97abaa92,Break down the Terms and Conditions for me,Section,SectionRetriever,sec_15,template,False
+419,sec_17_bd4bc160,Recap the Eligibility Criteria section,Section,SectionRetriever,sec_17,template,False
+420,sec_18_658fb5ef,Pull up the Assumptions part of the handbook,Section,SectionRetriever,sec_18,template,False
+421,sec_05_658fb5ef,What's covered under Assumptions,Section,SectionRetriever,sec_05,template,False
+422,sec_02_20c51b5f,Summarize the Methods,Section,SectionRetriever,sec_02,template,False
+423,sec_06_a9ded1e5,Give me a summary of the Background,Section,SectionRetriever,sec_06,template,False
+424,sec_12_d03cbf06,Show me the Objectives section,Section,SectionRetriever,sec_12,template,False
+425,sec_19_3b878279,What information is under Overview,Section,SectionRetriever,sec_19,template,False
+426,sec_02_b098f06a,Summarize the Literature Review,Section,SectionRetriever,sec_02,template,False
+427,sec_10_a573d92b,Explain what's written in the Executive Summary,Section,SectionRetriever,sec_10,template,False
+428,sec_01_e353dbe4,What does the Abstract section say,Section,SectionRetriever,sec_01,template,False
+429,sec_08_d95867de,Walk me through the References section,Section,SectionRetriever,sec_08,template,False
+430,sec_01_1fe917b0,What does the FAQ section say,Section,SectionRetriever,sec_01,template,False
+431,sec_10_3b878279,Explain what's written in the Overview,Section,SectionRetriever,sec_10,template,False
+432,sec_16_30fa36cb,What's the gist of the Safety Instructions,Section,SectionRetriever,sec_16,template,False
+433,sec_05_b10f0c75,What's covered under Warranty,Section,SectionRetriever,sec_05,template,False
+434,sec_16_a573d92b,What's the gist of the Executive Summary,Section,SectionRetriever,sec_16,template,False
+435,sec_09_d95867de,What are the key points in References,Section,SectionRetriever,sec_09,template,False
+436,sec_17_307e046a,Recap the Governing Law section?,Section,SectionRetriever,sec_17_var,template,False
+437,sec_09_d03cbf06,What are the key points in Objectives,Section,SectionRetriever,sec_09,template,False
+438,sec_07_31d109d1,What does the whitepaper say in its Glossary,Section,SectionRetriever,sec_07,template,False
+439,sec_04_97d8f56b,Tell me about the Definitions section,Section,SectionRetriever,sec_04,template,False
+440,sec_02_ad0a802e,Summarize the Disclaimer,Section,SectionRetriever,sec_02,template,False
+441,sec_02_1fe917b0,Summarize the FAQ,Section,SectionRetriever,sec_02,template,False
+442,sec_14_aed402c3,How is Related Work described in the document,Section,SectionRetriever,sec_14,template,False
+443,sec_14_658fb5ef,How is Assumptions described in the document,Section,SectionRetriever,sec_14,template,False
+444,sec_09_1fe917b0,What are the key points in FAQ,Section,SectionRetriever,sec_09,template,False
+445,sec_11_31d109d1,What is discussed in the Glossary chapter,Section,SectionRetriever,sec_11,template,False
+446,sec_06_b10f0c75,Give me a summary of the Warranty,Section,SectionRetriever,sec_06,template,False
+447,sec_13_658fb5ef,What details are in the Assumptions,Section,SectionRetriever,sec_13,template,False
+448,sec_04_d811a69c,Tell me about the Risk Factors section?,Section,SectionRetriever,sec_04_var,template,False
+449,sec_20_5259ae4a,Does the Recommendations mention anything specific,Section,SectionRetriever,sec_20,template,False
+450,sec_18_aed402c3,Pull up the Related Work part of the handbook?,Section,SectionRetriever,sec_18_var,template,False
+451,sec_12_827d315c,Show me the Confidentiality Clause section,Section,SectionRetriever,sec_12,template,False
+452,sec_05_697340d9,What's covered under Installation Guide?,Section,SectionRetriever,sec_05_var,template,False
+453,sec_09_30fa36cb,What are the key points in Safety Instructions,Section,SectionRetriever,sec_09,template,False
+454,sec_15_a9ded1e5,Break down the Background for me,Section,SectionRetriever,sec_15,template,False
+455,sec_15_e353dbe4,Break down the Abstract for me,Section,SectionRetriever,sec_15,template,False
+456,sec_20_697340d9,Does the Installation Guide mention anything specific,Section,SectionRetriever,sec_20,template,False
+457,sec_10_6f8b794f,Explain what's written in the Conclusion,Section,SectionRetriever,sec_10,template,False
+458,sec_01_e646e16b,What does the Limitations section say,Section,SectionRetriever,sec_01,template,False
+459,sec_10_20c51b5f,Explain what's written in the Methods,Section,SectionRetriever,sec_10,template,False
+460,sec_05_ad0a802e,What's covered under Disclaimer?,Section,SectionRetriever,sec_05_var,template,False
+461,sec_08_1e487f88,Walk me through the Scope of Work section,Section,SectionRetriever,sec_08,template,False
+462,sec_11_3b878279,What is discussed in the Overview chapter,Section,SectionRetriever,sec_11,template,False
+463,sec_08_a573d92b,Walk me through the Executive Summary section,Section,SectionRetriever,sec_08,template,False
+464,sec_06_30fa36cb,Give me a summary of the Safety Instructions,Section,SectionRetriever,sec_06,template,False
+465,sec_05_1e487f88,What's covered under Scope of Work,Section,SectionRetriever,sec_05,template,False
+466,sec_18_231cf4c7,Pull up the Troubleshooting part of the specification,Section,SectionRetriever,sec_18,template,False
+467,sec_01_307e046a,What does the Governing Law section say,Section,SectionRetriever,sec_01,template,False
+468,sec_20_aed402c3,Does the Related Work mention anything specific,Section,SectionRetriever,sec_20,template,False
+469,sec_20_30fa36cb,Does the Safety Instructions mention anything specific,Section,SectionRetriever,sec_20,template,False
+470,sec_10_99b60b57,Explain what's written in the Termination Clause,Section,SectionRetriever,sec_10,template,False
+471,sec_16_97abaa92,What's the gist of the Terms and Conditions?,Section,SectionRetriever,sec_16_var,template,False
+472,sec_17_eed9474f,Recap the Discussion section,Section,SectionRetriever,sec_17,template,False
+473,sec_06_e646e16b,Give me a summary of the Limitations,Section,SectionRetriever,sec_06,template,False
+474,sec_02_a573d92b,Summarize the Executive Summary,Section,SectionRetriever,sec_02,template,False
+475,sec_06_827d315c,Give me a summary of the Confidentiality Clause,Section,SectionRetriever,sec_06,template,False
+476,sec_18_31d109d1,Pull up the Glossary part of the policy document,Section,SectionRetriever,sec_18,template,False
+477,sec_10_697340d9,Explain what's written in the Installation Guide?,Section,SectionRetriever,sec_10_var,template,False
+478,sec_06_30fa36cb,Give me a summary of the Safety Instructions?,Section,SectionRetriever,sec_06_var,template,False
+479,sec_07_697340d9,What does the policy document say in its Installation Guide,Section,SectionRetriever,sec_07,template,False
+480,sec_18_aed402c3,Pull up the Related Work part of the handbook,Section,SectionRetriever,sec_18,template,False
+481,sec_15_b098f06a,Break down the Literature Review for me,Section,SectionRetriever,sec_15,template,False
+482,sec_19_bd4bc160,What information is under Eligibility Criteria,Section,SectionRetriever,sec_19,template,False
+483,sec_10_e646e16b,Explain what's written in the Limitations,Section,SectionRetriever,sec_10,template,False
+484,sec_15_ad0a802e,Break down the Disclaimer for me,Section,SectionRetriever,sec_15,template,False
+485,sec_13_cc299f69,What details are in the Financial Highlights,Section,SectionRetriever,sec_13,template,False
+486,sec_01_827d315c,What does the Confidentiality Clause section say,Section,SectionRetriever,sec_01,template,False
+487,sec_01_fd69c5cf,What does the Results section say,Section,SectionRetriever,sec_01,template,False
+488,sec_06_31d109d1,Give me a summary of the Glossary,Section,SectionRetriever,sec_06,template,False
+489,sec_08_e353dbe4,Walk me through the Abstract section,Section,SectionRetriever,sec_08,template,False
+490,sec_05_e353dbe4,What's covered under Abstract,Section,SectionRetriever,sec_05,template,False
+491,sec_18_cc299f69,Pull up the Financial Highlights part of the policy document,Section,SectionRetriever,sec_18,template,False
+492,sec_20_31d109d1,Does the Glossary mention anything specific,Section,SectionRetriever,sec_20,template,False
+493,sec_13_2ba0c1d2,What details are in the Methodology?,Section,SectionRetriever,sec_13_var,template,False
+494,sec_05_d95867de,What's covered under References,Section,SectionRetriever,sec_05,template,False
+495,sec_02_99b60b57,Summarize the Termination Clause,Section,SectionRetriever,sec_02,template,False
+496,sec_12_e353dbe4,Show me the Abstract section,Section,SectionRetriever,sec_12,template,False
+497,sec_05_a573d92b,What's covered under Executive Summary,Section,SectionRetriever,sec_05,template,False
+498,sec_15_20c51b5f,Break down the Methods for me,Section,SectionRetriever,sec_15,template,False
+499,sec_18_cc299f69,Pull up the Financial Highlights part of the policy document?,Section,SectionRetriever,sec_18_var,template,False
+500,sec_12_658fb5ef,Show me the Assumptions section,Section,SectionRetriever,sec_12,template,False
+501,sec_18_d03cbf06,Pull up the Objectives part of the handbook,Section,SectionRetriever,sec_18,template,False
+502,sec_11_a573d92b,What is discussed in the Executive Summary chapter,Section,SectionRetriever,sec_11,template,False
+503,sec_01_5259ae4a,What does the Recommendations section say,Section,SectionRetriever,sec_01,template,False
+504,sec_12_b10f0c75,Show me the Warranty section,Section,SectionRetriever,sec_12,template,False
+505,sec_01_b10f0c75,What does the Warranty section say,Section,SectionRetriever,sec_01,template,False
+506,sec_11_bd4bc160,What is discussed in the Eligibility Criteria chapter,Section,SectionRetriever,sec_11,template,False
+507,sec_04_1fe917b0,Tell me about the FAQ section,Section,SectionRetriever,sec_04,template,False
+508,sec_16_e646e16b,What's the gist of the Limitations,Section,SectionRetriever,sec_16,template,False
+509,sec_16_e646e16b,What's the gist of the Limitations?,Section,SectionRetriever,sec_16_var,template,False
+510,sec_08_2ba0c1d2,Walk me through the Methodology section,Section,SectionRetriever,sec_08,template,False
+511,sec_19_99b60b57,What information is under Termination Clause,Section,SectionRetriever,sec_19,template,False
+512,sec_07_bd4bc160,What does the PDF say in its Eligibility Criteria,Section,SectionRetriever,sec_07,template,False
+513,sec_19_bd4bc160,What information is under Eligibility Criteria?,Section,SectionRetriever,sec_19_var,template,False
+514,sec_09_bd4bc160,What are the key points in Eligibility Criteria,Section,SectionRetriever,sec_09,template,False
+515,sec_19_ad0a802e,What information is under Disclaimer,Section,SectionRetriever,sec_19,template,False
+516,sec_06_d811a69c,Give me a summary of the Risk Factors,Section,SectionRetriever,sec_06,template,False
+517,sec_12_6f8b794f,Show me the Conclusion section,Section,SectionRetriever,sec_12,template,False
+518,sec_09_aed402c3,What are the key points in Related Work,Section,SectionRetriever,sec_09,template,False
+519,sec_13_2ba0c1d2,What details are in the Methodology,Section,SectionRetriever,sec_13,template,False
+520,sec_10_d95867de,Explain what's written in the References,Section,SectionRetriever,sec_10,template,False
+521,sec_19_97abaa92,What information is under Terms and Conditions,Section,SectionRetriever,sec_19,template,False
+522,sec_08_aed402c3,Walk me through the Related Work section,Section,SectionRetriever,sec_08,template,False
+523,sec_16_1e487f88,What's the gist of the Scope of Work,Section,SectionRetriever,sec_16,template,False
+524,sec_10_cff1be7f,Explain what's written in the Appendix,Section,SectionRetriever,sec_10,template,False
+525,sec_10_b10f0c75,Explain what's written in the Warranty,Section,SectionRetriever,sec_10,template,False
+526,sec_07_ad0a802e,What does the policy document say in its Disclaimer,Section,SectionRetriever,sec_07,template,False
+527,sec_15_aed402c3,Break down the Related Work for me,Section,SectionRetriever,sec_15,template,False
+528,sec_18_697340d9,Pull up the Installation Guide part of the guide?,Section,SectionRetriever,sec_18_var,template,False
+529,sec_13_20c51b5f,What details are in the Methods,Section,SectionRetriever,sec_13,template,False
+530,sec_13_a573d92b,What details are in the Executive Summary,Section,SectionRetriever,sec_13,template,False
+531,sec_15_b098f06a,Break down the Literature Review for me?,Section,SectionRetriever,sec_15_var,template,False
+532,sec_17_e353dbe4,Recap the Abstract section,Section,SectionRetriever,sec_17,template,False
+533,sec_19_97abaa92,What information is under Terms and Conditions?,Section,SectionRetriever,sec_19_var,template,False
+534,sec_04_d811a69c,Tell me about the Risk Factors section,Section,SectionRetriever,sec_04,template,False
+535,sec_20_30fa36cb,Does the Safety Instructions mention anything specific?,Section,SectionRetriever,sec_20_var,template,False
+536,sec_02_97d8f56b,Summarize the Definitions?,Section,SectionRetriever,sec_02_var,template,False
+537,sec_11_658fb5ef,What is discussed in the Assumptions chapter,Section,SectionRetriever,sec_11,template,False
+538,sec_14_d95867de,How is References described in the document,Section,SectionRetriever,sec_14,template,False
+539,sec_06_d95867de,Give me a summary of the References,Section,SectionRetriever,sec_06,template,False
+540,sec_18_a9ded1e5,Pull up the Background part of the policy document,Section,SectionRetriever,sec_18,template,False
+541,sec_03_31d109d1,Can you explain the Glossary part?,Section,SectionRetriever,sec_03_var,template,False
+542,sec_19_cff1be7f,What information is under Appendix?,Section,SectionRetriever,sec_19_var,template,False
+543,sec_18_6f8b794f,Pull up the Conclusion part of the guide,Section,SectionRetriever,sec_18,template,False
+544,sec_01_31d109d1,What does the Glossary section say,Section,SectionRetriever,sec_01,template,False
+545,sec_13_6f8b794f,What details are in the Conclusion,Section,SectionRetriever,sec_13,template,False
+546,sec_07_2ba0c1d2,What does the whitepaper say in its Methodology,Section,SectionRetriever,sec_07,template,False
+547,sec_17_a573d92b,Recap the Executive Summary section,Section,SectionRetriever,sec_17,template,False
+548,sec_20_a573d92b,Does the Executive Summary mention anything specific,Section,SectionRetriever,sec_20,template,False
+549,sec_05_d03cbf06,What's covered under Objectives?,Section,SectionRetriever,sec_05_var,template,False
+550,sec_19_cff1be7f,What information is under Appendix,Section,SectionRetriever,sec_19,template,False
+551,sec_05_697340d9,What's covered under Installation Guide,Section,SectionRetriever,sec_05,template,False
+552,sec_07_1e487f88,What does the whitepaper say in its Scope of Work,Section,SectionRetriever,sec_07,template,False
+553,sec_09_a9ded1e5,What are the key points in Background,Section,SectionRetriever,sec_09,template,False
+554,sec_04_a573d92b,Tell me about the Executive Summary section,Section,SectionRetriever,sec_04,template,False
+555,sec_12_cff1be7f,Show me the Appendix section,Section,SectionRetriever,sec_12,template,False
+556,sec_03_cff1be7f,Can you explain the Appendix part,Section,SectionRetriever,sec_03,template,False
+557,sec_15_99b60b57,Break down the Termination Clause for me,Section,SectionRetriever,sec_15,template,False
+558,sec_16_eed9474f,What's the gist of the Discussion,Section,SectionRetriever,sec_16,template,False
+559,sec_03_31d109d1,Can you explain the Glossary part,Section,SectionRetriever,sec_03,template,False
+560,hn_tbl_gen_096,Extract the quarterly revenue table.,Table,TableExtractor,hn_tbl_gen_096,template,True
+561,hn_tbl_gen_097,Show me the data table for employee headcount.,Table,TableExtractor,hn_tbl_gen_097,template,True
+562,hn_tbl_gen_099,Get the table comparing product specifications.,Table,TableExtractor,hn_tbl_gen_099,template,True
+563,hn_tbl_gen_100,Fetch the risk matrix table.,Table,TableExtractor,hn_tbl_gen_100,template,True
+564,hn_tbl_gen_102,Show the tabulated performance metrics.,Table,TableExtractor,hn_tbl_gen_102,template,True
+565,hn_tbl_gen_103,Give me the benchmark results table.,Table,TableExtractor,hn_tbl_gen_103,template,True
+566,hn_tbl_gen_104,Pull the tax rates table.,Table,TableExtractor,hn_tbl_gen_104,template,True
+567,hn_tbl_gen_106,Extract the table with discount tiers.,Table,TableExtractor,hn_tbl_gen_106,template,True
+568,hn_tbl_gen_107,Show me the feature comparison table.,Table,TableExtractor,hn_tbl_gen_107,template,True
+569,hn_tbl_gen_108,Retrieve the financial statements table.,Table,TableExtractor,hn_tbl_gen_108,template,True
+570,hn_tbl_gen_109,Give me the attendance record in table form.,Table,TableExtractor,hn_tbl_gen_109,template,True
+571,hn_tbl_gen_110,Can you extract the grading rubric table?,Table,TableExtractor,hn_tbl_gen_110,template,True
+572,hn_tbl_gen_112,Show me the error codes table.,Table,TableExtractor,hn_tbl_gen_112,template,True
+573,hn_tbl_gen_113,Pull the ingredient list table.,Table,TableExtractor,hn_tbl_gen_113,template,True
+574,hn_tbl_gen_115,Fetch the nutritional information table.,Table,TableExtractor,hn_tbl_gen_115,template,True
+575,hn_tbl_gen_116,Extract the table with project milestones.,Table,TableExtractor,hn_tbl_gen_116,template,True
+576,hn_tbl_gen_118,Pull the warranty comparison table.,Table,TableExtractor,hn_tbl_gen_118,template,True
+577,hn_tbl_gen_119,Give me the test results in table form.,Table,TableExtractor,hn_tbl_gen_119,template,True
+578,hn_tbl_gen_120,Can you extract the expense breakdown table?,Table,TableExtractor,hn_tbl_gen_120,template,True
+579,hn_tbl_gen_121,Retrieve the table comparing model performance.,Table,TableExtractor,hn_tbl_gen_121,template,True
+580,hn_tbl_gen_122,Show the annual budget table.,Table,TableExtractor,hn_tbl_gen_122,template,True
+581,hn_tbl_gen_124,Get the data table for sales figures.,Table,TableExtractor,hn_tbl_gen_124,template,True
+582,hn_tbl_gen_125,Fetch the table of technical specifications.,Table,TableExtractor,hn_tbl_gen_125,template,True
+583,hn_tbl_gen_126,Pull the tabulated data on discount tiers.,Table,TableExtractor,hn_tbl_gen_126,template,True
+584,hn_tbl_gen_127,Give me the growth projections in table format.,Table,TableExtractor,hn_tbl_gen_127,template,True
+585,hn_tbl_gen_128,Show me the table with benchmark scores.,Table,TableExtractor,hn_tbl_gen_128,template,True
+586,hn_tbl_gen_129,Extract all tables about financial data.,Table,TableExtractor,hn_tbl_gen_129,template,True
+587,tbl_07_058d2155,Extract the nutritional information figures from the table,Table,TableExtractor,tbl_07,template,False
+588,tbl_10_5524060b,What are the values in the shipment schedule table?,Table,TableExtractor,tbl_10_var,template,False
+589,tbl_08_c4c44a91,Give me the table comparing attendance record,Table,TableExtractor,tbl_08,template,False
+590,tbl_17_0597487a,What numbers are shown in the growth projections table,Table,TableExtractor,tbl_17,template,False
+591,tbl_11_ab75a9f4,Retrieve the table for financial statements,Table,TableExtractor,tbl_11,template,False
+592,tbl_15_0597487a,Convert the growth projections table into something readable,Table,TableExtractor,tbl_15,template,False
+593,tbl_20_e6369ed4,Is there a table showing employee headcount,Table,TableExtractor,tbl_20,template,False
+594,tbl_02_e6369ed4,Show me the employee headcount table,Table,TableExtractor,tbl_02,template,False
+595,tbl_15_058d2155,Convert the nutritional information table into something readable,Table,TableExtractor,tbl_15,template,False
+596,tbl_02_7eff1db5,Show me the pricing plan table,Table,TableExtractor,tbl_02,template,False
+597,tbl_12_53225e22,Fetch the technical specifications table from the document,Table,TableExtractor,tbl_12,template,False
+598,tbl_14_8135d49a,List the rows in the sales figures table,Table,TableExtractor,tbl_14,template,False
+599,tbl_09_c8495ac0,Pull the tax rates statistics table,Table,TableExtractor,tbl_09,template,False
+600,tbl_10_29210d1b,What are the values in the warranty comparison table,Table,TableExtractor,tbl_10,template,False
+601,tbl_03_5bcad263,Can you pull the data table about risk matrix,Table,TableExtractor,tbl_03,template,False
+602,tbl_13_8e99d755,Show the tabulated product specifications data,Table,TableExtractor,tbl_13,template,False
+603,tbl_11_50c257dd,Retrieve the table for expense breakdown,Table,TableExtractor,tbl_11,template,False
+604,tbl_09_d48efc1b,Pull the error codes statistics table,Table,TableExtractor,tbl_09,template,False
+605,tbl_17_1b8a4202,What numbers are shown in the feature comparison table,Table,TableExtractor,tbl_17,template,False
+606,tbl_18_1949ec21,Extract all data from the inventory list table,Table,TableExtractor,tbl_18,template,False
+607,tbl_07_53225e22,Extract the technical specifications figures from the table,Table,TableExtractor,tbl_07,template,False
+608,tbl_17_27daea97,What numbers are shown in the survey responses table,Table,TableExtractor,tbl_17,template,False
+609,tbl_15_1949ec21,Convert the inventory list table into something readable,Table,TableExtractor,tbl_15,template,False
+610,tbl_06_1949ec21,I need the inventory list data in table form,Table,TableExtractor,tbl_06,template,False
+611,tbl_07_f40a58d1,Extract the benchmark results figures from the table,Table,TableExtractor,tbl_07,template,False
+612,tbl_01_a164e3a2,Extract the table on performance metrics,Table,TableExtractor,tbl_01,template,False
+613,tbl_12_9b03e4f8,Fetch the grading rubric table from the document,Table,TableExtractor,tbl_12,template,False
+614,tbl_01_a9a8d748,Extract the table on project milestones,Table,TableExtractor,tbl_01,template,False
+615,tbl_16_ab75a9f4,Give me the breakdown table for financial statements,Table,TableExtractor,tbl_16,template,False
+616,tbl_10_4fb9cf08,What are the values in the discount tiers table,Table,TableExtractor,tbl_10,template,False
+617,tbl_19_87135062,Summarize the annual budget table,Table,TableExtractor,tbl_19,template,False
+618,tbl_19_a9a8d748,Summarize the project milestones table?,Table,TableExtractor,tbl_19_var,template,False
+619,tbl_10_f71bf531,What are the values in the test results table,Table,TableExtractor,tbl_10,template,False
+620,tbl_19_53225e22,Summarize the technical specifications table,Table,TableExtractor,tbl_19,template,False
+621,tbl_11_8135d49a,Retrieve the table for sales figures,Table,TableExtractor,tbl_11,template,False
+622,tbl_03_53225e22,Can you pull the data table about technical specifications,Table,TableExtractor,tbl_03,template,False
+623,tbl_16_a9a8d748,Give me the breakdown table for project milestones,Table,TableExtractor,tbl_16,template,False
+624,tbl_07_ab75a9f4,Extract the financial statements figures from the table,Table,TableExtractor,tbl_07,template,False
+625,tbl_14_53225e22,List the rows in the technical specifications table?,Table,TableExtractor,tbl_14_var,template,False
+626,tbl_14_ab75a9f4,List the rows in the financial statements table,Table,TableExtractor,tbl_14,template,False
+627,tbl_03_d48efc1b,Can you pull the data table about error codes,Table,TableExtractor,tbl_03,template,False
+628,tbl_02_058d2155,Show me the nutritional information table,Table,TableExtractor,tbl_02,template,False
+629,tbl_07_4fb9cf08,Extract the discount tiers figures from the table,Table,TableExtractor,tbl_07,template,False
+630,tbl_15_53225e22,Convert the technical specifications table into something readable,Table,TableExtractor,tbl_15,template,False
+631,tbl_12_27daea97,Fetch the survey responses table from the document,Table,TableExtractor,tbl_12,template,False
+632,tbl_03_f10912d3,Can you pull the data table about salary bands,Table,TableExtractor,tbl_03,template,False
+633,tbl_17_5a8d3691,What numbers are shown in the exam timetable table,Table,TableExtractor,tbl_17,template,False
+634,tbl_03_50c257dd,Can you pull the data table about expense breakdown,Table,TableExtractor,tbl_03,template,False
+635,tbl_15_c132ab9a,Convert the model comparison table into something readable,Table,TableExtractor,tbl_15,template,False
+636,tbl_12_d48efc1b,Fetch the error codes table from the document,Table,TableExtractor,tbl_12,template,False
+637,tbl_03_27daea97,Can you pull the data table about survey responses,Table,TableExtractor,tbl_03,template,False
+638,tbl_17_f10912d3,What numbers are shown in the salary bands table,Table,TableExtractor,tbl_17,template,False
+639,tbl_17_8e99d755,What numbers are shown in the product specifications table,Table,TableExtractor,tbl_17,template,False
+640,tbl_02_8135d49a,Show me the sales figures table,Table,TableExtractor,tbl_02,template,False
+641,tbl_04_8135d49a,Get me the numbers from the sales figures table,Table,TableExtractor,tbl_04,template,False
+642,tbl_20_a164e3a2,Is there a table showing performance metrics,Table,TableExtractor,tbl_20,template,False
+643,tbl_17_702da4dc,What numbers are shown in the ingredient list table?,Table,TableExtractor,tbl_17_var,template,False
+644,tbl_08_1949ec21,Give me the table comparing inventory list,Table,TableExtractor,tbl_08,template,False
+645,tbl_09_c4c44a91,Pull the attendance record statistics table,Table,TableExtractor,tbl_09,template,False
+646,tbl_19_1949ec21,Summarize the inventory list table?,Table,TableExtractor,tbl_19_var,template,False
+647,tbl_08_27daea97,Give me the table comparing survey responses,Table,TableExtractor,tbl_08,template,False
+648,tbl_12_53225e22,Fetch the technical specifications table from the document?,Table,TableExtractor,tbl_12_var,template,False
+649,tbl_19_ab75a9f4,Summarize the financial statements table,Table,TableExtractor,tbl_19,template,False
+650,tbl_06_c8495ac0,I need the tax rates data in table form,Table,TableExtractor,tbl_06,template,False
+651,tbl_04_8e99d755,Get me the numbers from the product specifications table,Table,TableExtractor,tbl_04,template,False
+652,tbl_05_058d2155,What does the table on nutritional information show,Table,TableExtractor,tbl_05,template,False
+653,tbl_04_c132ab9a,Get me the numbers from the model comparison table,Table,TableExtractor,tbl_04,template,False
+654,tbl_05_87135062,What does the table on annual budget show,Table,TableExtractor,tbl_05,template,False
+655,tbl_13_1b8a4202,Show the tabulated feature comparison data,Table,TableExtractor,tbl_13,template,False
+656,tbl_09_4fb9cf08,Pull the discount tiers statistics table,Table,TableExtractor,tbl_09,template,False
+657,tbl_18_e6369ed4,Extract all data from the employee headcount table?,Table,TableExtractor,tbl_18_var,template,False
+658,tbl_11_c8495ac0,Retrieve the table for tax rates,Table,TableExtractor,tbl_11,template,False
+659,tbl_18_5a8d3691,Extract all data from the exam timetable table,Table,TableExtractor,tbl_18,template,False
+660,tbl_20_702da4dc,Is there a table showing ingredient list,Table,TableExtractor,tbl_20,template,False
+661,tbl_08_87135062,Give me the table comparing annual budget,Table,TableExtractor,tbl_08,template,False
+662,tbl_17_8135d49a,What numbers are shown in the sales figures table,Table,TableExtractor,tbl_17,template,False
+663,tbl_03_8e99d755,Can you pull the data table about product specifications,Table,TableExtractor,tbl_03,template,False
+664,tbl_05_50c257dd,What does the table on expense breakdown show,Table,TableExtractor,tbl_05,template,False
+665,tbl_10_8e99d755,What are the values in the product specifications table?,Table,TableExtractor,tbl_10_var,template,False
+666,tbl_02_1949ec21,Show me the inventory list table,Table,TableExtractor,tbl_02,template,False
+667,tbl_07_f71bf531,Extract the test results figures from the table,Table,TableExtractor,tbl_07,template,False
+668,tbl_05_d0b6e99f,What does the table on quarterly revenue show,Table,TableExtractor,tbl_05,template,False
+669,tbl_17_29210d1b,What numbers are shown in the warranty comparison table,Table,TableExtractor,tbl_17,template,False
+670,tbl_12_702da4dc,Fetch the ingredient list table from the document?,Table,TableExtractor,tbl_12_var,template,False
+671,tbl_02_87135062,Show me the annual budget table,Table,TableExtractor,tbl_02,template,False
+672,tbl_09_0597487a,Pull the growth projections statistics table,Table,TableExtractor,tbl_09,template,False
+673,tbl_18_c8495ac0,Extract all data from the tax rates table,Table,TableExtractor,tbl_18,template,False
+674,tbl_05_27daea97,What does the table on survey responses show,Table,TableExtractor,tbl_05,template,False
+675,tbl_01_50c257dd,Extract the table on expense breakdown,Table,TableExtractor,tbl_01,template,False
+676,tbl_20_8135d49a,Is there a table showing sales figures?,Table,TableExtractor,tbl_20_var,template,False
+677,tbl_19_058d2155,Summarize the nutritional information table,Table,TableExtractor,tbl_19,template,False
+678,tbl_14_d48efc1b,List the rows in the error codes table,Table,TableExtractor,tbl_14,template,False
+679,tbl_03_4fb9cf08,Can you pull the data table about discount tiers,Table,TableExtractor,tbl_03,template,False
+680,tbl_04_f40a58d1,Get me the numbers from the benchmark results table,Table,TableExtractor,tbl_04,template,False
+681,tbl_04_e6369ed4,Get me the numbers from the employee headcount table,Table,TableExtractor,tbl_04,template,False
+682,tbl_20_c4c44a91,Is there a table showing attendance record,Table,TableExtractor,tbl_20,template,False
+683,tbl_18_c132ab9a,Extract all data from the model comparison table,Table,TableExtractor,tbl_18,template,False
+684,tbl_06_4fb9cf08,I need the discount tiers data in table form,Table,TableExtractor,tbl_06,template,False
+685,tbl_19_c132ab9a,Summarize the model comparison table,Table,TableExtractor,tbl_19,template,False
+686,tbl_19_5bcad263,Summarize the risk matrix table,Table,TableExtractor,tbl_19,template,False
+687,tbl_02_c4c44a91,Show me the attendance record table,Table,TableExtractor,tbl_02,template,False
+688,tbl_10_5524060b,What are the values in the shipment schedule table,Table,TableExtractor,tbl_10,template,False
+689,tbl_15_0597487a,Convert the growth projections table into something readable?,Table,TableExtractor,tbl_15_var,template,False
+690,tbl_18_4fb9cf08,Extract all data from the discount tiers table,Table,TableExtractor,tbl_18,template,False
+691,tbl_02_27daea97,Show me the survey responses table,Table,TableExtractor,tbl_02,template,False
+692,tbl_20_d0b6e99f,Is there a table showing quarterly revenue?,Table,TableExtractor,tbl_20_var,template,False
+693,tbl_15_702da4dc,Convert the ingredient list table into something readable,Table,TableExtractor,tbl_15,template,False
+694,tbl_13_e6369ed4,Show the tabulated employee headcount data,Table,TableExtractor,tbl_13,template,False
+695,tbl_12_702da4dc,Fetch the ingredient list table from the document,Table,TableExtractor,tbl_12,template,False
+696,tbl_14_29210d1b,List the rows in the warranty comparison table,Table,TableExtractor,tbl_14,template,False
+697,tbl_17_f40a58d1,What numbers are shown in the benchmark results table,Table,TableExtractor,tbl_17,template,False
+698,tbl_15_a164e3a2,Convert the performance metrics table into something readable,Table,TableExtractor,tbl_15,template,False
+699,tbl_01_d0b6e99f,Extract the table on quarterly revenue,Table,TableExtractor,tbl_01,template,False
+700,tbl_19_f40a58d1,Summarize the benchmark results table,Table,TableExtractor,tbl_19,template,False
+701,tbl_20_8e99d755,Is there a table showing product specifications?,Table,TableExtractor,tbl_20_var,template,False
+702,tbl_15_f71bf531,Convert the test results table into something readable,Table,TableExtractor,tbl_15,template,False
+703,tbl_16_e6369ed4,Give me the breakdown table for employee headcount,Table,TableExtractor,tbl_16,template,False
+704,tbl_11_1949ec21,Retrieve the table for inventory list,Table,TableExtractor,tbl_11,template,False
+705,tbl_16_87135062,Give me the breakdown table for annual budget,Table,TableExtractor,tbl_16,template,False
+706,tbl_16_1b8a4202,Give me the breakdown table for feature comparison,Table,TableExtractor,tbl_16,template,False
+707,tbl_06_c132ab9a,I need the model comparison data in table form,Table,TableExtractor,tbl_06,template,False
+708,tbl_10_a164e3a2,What are the values in the performance metrics table,Table,TableExtractor,tbl_10,template,False
+709,tbl_07_a9a8d748,Extract the project milestones figures from the table,Table,TableExtractor,tbl_07,template,False
+710,tbl_02_8135d49a,Show me the sales figures table?,Table,TableExtractor,tbl_02_var,template,False
+711,tbl_18_d48efc1b,Extract all data from the error codes table,Table,TableExtractor,tbl_18,template,False
+712,tbl_20_8e99d755,Is there a table showing product specifications,Table,TableExtractor,tbl_20,template,False
+713,tbl_04_1b8a4202,Get me the numbers from the feature comparison table,Table,TableExtractor,tbl_04,template,False
+714,tbl_15_a9a8d748,Convert the project milestones table into something readable,Table,TableExtractor,tbl_15,template,False
+715,tbl_11_50c257dd,Retrieve the table for expense breakdown?,Table,TableExtractor,tbl_11_var,template,False
+716,tbl_01_c8495ac0,Extract the table on tax rates,Table,TableExtractor,tbl_01,template,False
+717,tbl_17_a9a8d748,What numbers are shown in the project milestones table,Table,TableExtractor,tbl_17,template,False
+718,tbl_13_058d2155,Show the tabulated nutritional information data,Table,TableExtractor,tbl_13,template,False
+719,tbl_01_a164e3a2,Extract the table on performance metrics?,Table,TableExtractor,tbl_01_var,template,False
+720,tbl_16_53225e22,Give me the breakdown table for technical specifications,Table,TableExtractor,tbl_16,template,False
+721,tbl_14_9b03e4f8,List the rows in the grading rubric table,Table,TableExtractor,tbl_14,template,False
+722,tbl_20_9b03e4f8,Is there a table showing grading rubric,Table,TableExtractor,tbl_20,template,False
+723,tbl_07_f10912d3,Extract the salary bands figures from the table,Table,TableExtractor,tbl_07,template,False
+724,tbl_16_8e99d755,Give me the breakdown table for product specifications,Table,TableExtractor,tbl_16,template,False
+725,tbl_19_1949ec21,Summarize the inventory list table,Table,TableExtractor,tbl_19,template,False
+726,tbl_13_5524060b,Show the tabulated shipment schedule data,Table,TableExtractor,tbl_13,template,False
+727,tbl_06_a164e3a2,I need the performance metrics data in table form,Table,TableExtractor,tbl_06,template,False
+728,tbl_06_0597487a,I need the growth projections data in table form,Table,TableExtractor,tbl_06,template,False
+729,tbl_20_c4c44a91,Is there a table showing attendance record?,Table,TableExtractor,tbl_20_var,template,False
+730,tbl_08_f40a58d1,Give me the table comparing benchmark results,Table,TableExtractor,tbl_08,template,False
+731,tbl_04_27daea97,Get me the numbers from the survey responses table,Table,TableExtractor,tbl_04,template,False
+732,tbl_18_53225e22,Extract all data from the technical specifications table,Table,TableExtractor,tbl_18,template,False
+733,tbl_18_e6369ed4,Extract all data from the employee headcount table,Table,TableExtractor,tbl_18,template,False
+734,tbl_20_5a8d3691,Is there a table showing exam timetable,Table,TableExtractor,tbl_20,template,False
+735,tbl_13_50c257dd,Show the tabulated expense breakdown data,Table,TableExtractor,tbl_13,template,False
+736,tbl_17_f71bf531,What numbers are shown in the test results table,Table,TableExtractor,tbl_17,template,False
+737,tbl_11_a9a8d748,Retrieve the table for project milestones,Table,TableExtractor,tbl_11,template,False
+738,tbl_13_8135d49a,Show the tabulated sales figures data?,Table,TableExtractor,tbl_13_var,template,False
+739,tbl_14_8135d49a,List the rows in the sales figures table?,Table,TableExtractor,tbl_14_var,template,False
+740,tbl_08_0597487a,Give me the table comparing growth projections,Table,TableExtractor,tbl_08,template,False
+741,tbl_05_ab75a9f4,What does the table on financial statements show,Table,TableExtractor,tbl_05,template,False
+742,tbl_06_5524060b,I need the shipment schedule data in table form,Table,TableExtractor,tbl_06,template,False
+743,tbl_16_f40a58d1,Give me the breakdown table for benchmark results,Table,TableExtractor,tbl_16,template,False
+744,tbl_19_f10912d3,Summarize the salary bands table,Table,TableExtractor,tbl_19,template,False
+745,tbl_17_ab75a9f4,What numbers are shown in the financial statements table,Table,TableExtractor,tbl_17,template,False
+746,tbl_15_1b8a4202,Convert the feature comparison table into something readable,Table,TableExtractor,tbl_15,template,False
+747,tbl_01_5bcad263,Extract the table on risk matrix,Table,TableExtractor,tbl_01,template,False
+748,tbl_17_c132ab9a,What numbers are shown in the model comparison table,Table,TableExtractor,tbl_17,template,False
+749,tbl_18_058d2155,Extract all data from the nutritional information table,Table,TableExtractor,tbl_18,template,False
+750,tbl_04_c8495ac0,Get me the numbers from the tax rates table,Table,TableExtractor,tbl_04,template,False
+751,tbl_12_5a8d3691,Fetch the exam timetable table from the document,Table,TableExtractor,tbl_12,template,False
+752,tbl_07_1949ec21,Extract the inventory list figures from the table?,Table,TableExtractor,tbl_07_var,template,False
+753,tbl_08_4fb9cf08,Give me the table comparing discount tiers,Table,TableExtractor,tbl_08,template,False
+754,tbl_10_50c257dd,What are the values in the expense breakdown table,Table,TableExtractor,tbl_10,template,False
+755,tbl_09_c132ab9a,Pull the model comparison statistics table,Table,TableExtractor,tbl_09,template,False
+756,tbl_11_0597487a,Retrieve the table for growth projections,Table,TableExtractor,tbl_11,template,False
+757,tbl_13_a164e3a2,Show the tabulated performance metrics data,Table,TableExtractor,tbl_13,template,False
+758,tbl_13_c8495ac0,Show the tabulated tax rates data,Table,TableExtractor,tbl_13,template,False
+759,tbl_03_a9a8d748,Can you pull the data table about project milestones,Table,TableExtractor,tbl_03,template,False
+760,tbl_04_5a8d3691,Get me the numbers from the exam timetable table,Table,TableExtractor,tbl_04,template,False
+761,tbl_09_e6369ed4,Pull the employee headcount statistics table,Table,TableExtractor,tbl_09,template,False
+762,tbl_11_5bcad263,Retrieve the table for risk matrix,Table,TableExtractor,tbl_11,template,False
+763,tbl_10_9b03e4f8,What are the values in the grading rubric table,Table,TableExtractor,tbl_10,template,False
+764,tbl_17_53225e22,What numbers are shown in the technical specifications table,Table,TableExtractor,tbl_17,template,False
+765,tbl_10_29210d1b,What are the values in the warranty comparison table?,Table,TableExtractor,tbl_10_var,template,False
+766,tbl_04_5a8d3691,Get me the numbers from the exam timetable table?,Table,TableExtractor,tbl_04_var,template,False
+767,tbl_09_702da4dc,Pull the ingredient list statistics table,Table,TableExtractor,tbl_09,template,False
+768,tbl_11_29210d1b,Retrieve the table for warranty comparison,Table,TableExtractor,tbl_11,template,False
+769,tbl_09_27daea97,Pull the survey responses statistics table,Table,TableExtractor,tbl_09,template,False
+770,tbl_20_1b8a4202,Is there a table showing feature comparison,Table,TableExtractor,tbl_20,template,False
+771,tbl_08_a9a8d748,Give me the table comparing project milestones,Table,TableExtractor,tbl_08,template,False
+772,tbl_05_5bcad263,What does the table on risk matrix show?,Table,TableExtractor,tbl_05_var,template,False
+773,tbl_01_f10912d3,Extract the table on salary bands,Table,TableExtractor,tbl_01,template,False
+774,tbl_14_8e99d755,List the rows in the product specifications table,Table,TableExtractor,tbl_14,template,False
+775,tbl_13_c132ab9a,Show the tabulated model comparison data?,Table,TableExtractor,tbl_13_var,template,False
+776,tbl_10_ab75a9f4,What are the values in the financial statements table,Table,TableExtractor,tbl_10,template,False
+777,tbl_18_29210d1b,Extract all data from the warranty comparison table,Table,TableExtractor,tbl_18,template,False
+778,tbl_11_8e99d755,Retrieve the table for product specifications,Table,TableExtractor,tbl_11,template,False
+779,tbl_08_4fb9cf08,Give me the table comparing discount tiers?,Table,TableExtractor,tbl_08_var,template,False
+780,tbl_15_c4c44a91,Convert the attendance record table into something readable,Table,TableExtractor,tbl_15,template,False
+781,tbl_07_c8495ac0,Extract the tax rates figures from the table,Table,TableExtractor,tbl_07,template,False
+782,tbl_17_c132ab9a,What numbers are shown in the model comparison table?,Table,TableExtractor,tbl_17_var,template,False
+783,tbl_07_5524060b,Extract the shipment schedule figures from the table,Table,TableExtractor,tbl_07,template,False
+784,tbl_07_7eff1db5,Extract the pricing plan figures from the table,Table,TableExtractor,tbl_07,template,False
+785,tbl_10_7eff1db5,What are the values in the pricing plan table,Table,TableExtractor,tbl_10,template,False
+786,tbl_02_f10912d3,Show me the salary bands table,Table,TableExtractor,tbl_02,template,False
+787,tbl_14_a9a8d748,List the rows in the project milestones table,Table,TableExtractor,tbl_14,template,False
+788,tbl_09_f10912d3,Pull the salary bands statistics table,Table,TableExtractor,tbl_09,template,False
+789,tbl_18_87135062,Extract all data from the annual budget table,Table,TableExtractor,tbl_18,template,False
+790,tbl_08_1949ec21,Give me the table comparing inventory list?,Table,TableExtractor,tbl_08_var,template,False
+791,tbl_04_29210d1b,Get me the numbers from the warranty comparison table,Table,TableExtractor,tbl_04,template,False
+792,tbl_14_0597487a,List the rows in the growth projections table,Table,TableExtractor,tbl_14,template,False
+793,tbl_11_d0b6e99f,Retrieve the table for quarterly revenue,Table,TableExtractor,tbl_11,template,False
+794,tbl_13_f40a58d1,Show the tabulated benchmark results data,Table,TableExtractor,tbl_13,template,False
+795,tbl_17_d0b6e99f,What numbers are shown in the quarterly revenue table,Table,TableExtractor,tbl_17,template,False
+796,tbl_08_c8495ac0,Give me the table comparing tax rates,Table,TableExtractor,tbl_08,template,False
+797,tbl_15_d48efc1b,Convert the error codes table into something readable,Table,TableExtractor,tbl_15,template,False
+798,tbl_14_702da4dc,List the rows in the ingredient list table,Table,TableExtractor,tbl_14,template,False
+799,tbl_19_f71bf531,Summarize the test results table,Table,TableExtractor,tbl_19,template,False
+800,tbl_13_27daea97,Show the tabulated survey responses data,Table,TableExtractor,tbl_13,template,False
+801,tbl_03_5bcad263,Can you pull the data table about risk matrix?,Table,TableExtractor,tbl_03_var,template,False
+802,tbl_01_1949ec21,Extract the table on inventory list,Table,TableExtractor,tbl_01,template,False
+803,tbl_09_f71bf531,Pull the test results statistics table?,Table,TableExtractor,tbl_09_var,template,False
+804,tbl_06_a9a8d748,I need the project milestones data in table form,Table,TableExtractor,tbl_06,template,False
+805,tbl_09_f71bf531,Pull the test results statistics table,Table,TableExtractor,tbl_09,template,False
+806,tbl_05_5524060b,What does the table on shipment schedule show,Table,TableExtractor,tbl_05,template,False
+807,tbl_10_5a8d3691,What are the values in the exam timetable table,Table,TableExtractor,tbl_10,template,False
+808,tbl_12_87135062,Fetch the annual budget table from the document,Table,TableExtractor,tbl_12,template,False
+809,tbl_10_87135062,What are the values in the annual budget table,Table,TableExtractor,tbl_10,template,False
+810,tbl_11_a9a8d748,Retrieve the table for project milestones?,Table,TableExtractor,tbl_11_var,template,False
+811,tbl_05_5bcad263,What does the table on risk matrix show,Table,TableExtractor,tbl_05,template,False
+812,tbl_19_4fb9cf08,Summarize the discount tiers table,Table,TableExtractor,tbl_19,template,False
+813,tbl_06_c4c44a91,I need the attendance record data in table form,Table,TableExtractor,tbl_06,template,False
+814,tbl_20_1949ec21,Is there a table showing inventory list,Table,TableExtractor,tbl_20,template,False
+815,tbl_11_058d2155,Retrieve the table for nutritional information,Table,TableExtractor,tbl_11,template,False
+816,tbl_05_f71bf531,What does the table on test results show,Table,TableExtractor,tbl_05,template,False
+817,tbl_20_8135d49a,Is there a table showing sales figures,Table,TableExtractor,tbl_20,template,False
+818,tbl_09_e6369ed4,Pull the employee headcount statistics table?,Table,TableExtractor,tbl_09_var,template,False
+819,tbl_11_e6369ed4,Retrieve the table for employee headcount,Table,TableExtractor,tbl_11,template,False
+820,tbl_06_f71bf531,I need the test results data in table form,Table,TableExtractor,tbl_06,template,False
+821,tbl_05_a9a8d748,What does the table on project milestones show,Table,TableExtractor,tbl_05,template,False
+822,tbl_16_8135d49a,Give me the breakdown table for sales figures,Table,TableExtractor,tbl_16,template,False
+823,tbl_07_a164e3a2,Extract the performance metrics figures from the table,Table,TableExtractor,tbl_07,template,False
+824,tbl_03_c132ab9a,Can you pull the data table about model comparison,Table,TableExtractor,tbl_03,template,False
+825,tbl_13_53225e22,Show the tabulated technical specifications data,Table,TableExtractor,tbl_13,template,False
+826,tbl_08_a164e3a2,Give me the table comparing performance metrics,Table,TableExtractor,tbl_08,template,False
+827,tbl_12_c8495ac0,Fetch the tax rates table from the document,Table,TableExtractor,tbl_12,template,False
+828,tbl_14_53225e22,List the rows in the technical specifications table,Table,TableExtractor,tbl_14,template,False
+829,tbl_16_c8495ac0,Give me the breakdown table for tax rates,Table,TableExtractor,tbl_16,template,False
+830,tbl_12_1b8a4202,Fetch the feature comparison table from the document,Table,TableExtractor,tbl_12,template,False
+831,tbl_15_5bcad263,Convert the risk matrix table into something readable,Table,TableExtractor,tbl_15,template,False
+832,tbl_15_f10912d3,Convert the salary bands table into something readable,Table,TableExtractor,tbl_15,template,False
+833,tbl_12_8135d49a,Fetch the sales figures table from the document,Table,TableExtractor,tbl_12,template,False
+834,tbl_19_702da4dc,Summarize the ingredient list table,Table,TableExtractor,tbl_19,template,False
+835,tbl_04_f40a58d1,Get me the numbers from the benchmark results table?,Table,TableExtractor,tbl_04_var,template,False
+836,tbl_08_50c257dd,Give me the table comparing expense breakdown,Table,TableExtractor,tbl_08,template,False
+837,tbl_17_702da4dc,What numbers are shown in the ingredient list table,Table,TableExtractor,tbl_17,template,False
+838,tbl_11_8e99d755,Retrieve the table for product specifications?,Table,TableExtractor,tbl_11_var,template,False
+839,hn_sec_gen_027,Is there anything about warranties in here?,General,BM25Search,hn_sec_gen_027,template,True
+840,hn_sec_gen_029,Does this document mention confidentiality?,General,BM25Search,hn_sec_gen_029,template,True
+841,hn_sec_gen_032,Is there a disclaimer in this document?,General,BM25Search,hn_sec_gen_032,template,True
+842,hn_sec_gen_034,Can you find the executive summary details?,General,BM25Search,hn_sec_gen_034,template,True
+843,hn_sec_gen_035,What is the scope of work described here?,General,BM25Search,hn_sec_gen_035,template,True
+844,hn_sec_gen_036,Are there any risk factors mentioned?,General,BM25Search,hn_sec_gen_036,template,True
+845,hn_sec_gen_037,What financial highlights are discussed?,General,BM25Search,hn_sec_gen_037,template,True
+846,hn_sec_gen_038,How is the methodology described?,General,BM25Search,hn_sec_gen_038,template,True
+847,hn_sec_gen_039,What does the literature review cover?,General,BM25Search,hn_sec_gen_039,template,True
+848,hn_sec_gen_041,Are there any non-disclosure requirements?,General,BM25Search,hn_sec_gen_041,template,True
+849,hn_sec_gen_042,What assumptions were made?,General,BM25Search,hn_sec_gen_042,template,True
+850,hn_sec_gen_046,What results were found?,General,BM25Search,hn_sec_gen_046,template,True
+851,hn_sec_gen_047,Are there any limitations discussed?,General,BM25Search,hn_sec_gen_047,template,True
+852,hn_sec_gen_048,How do I install the software?,General,BM25Search,hn_sec_gen_048,template,True
+853,hn_sec_gen_049,What frequently asked questions are addressed?,General,BM25Search,hn_sec_gen_049,template,True
+854,hn_sec_gen_050,Who is acknowledged in this document?,General,BM25Search,hn_sec_gen_050,template,True
+855,hn_tbl_gen_131,What are the quarterly revenue figures?,General,BM25Search,hn_tbl_gen_131,template,True
+856,hn_tbl_gen_133,What's the pricing structure?,General,BM25Search,hn_tbl_gen_133,template,True
+857,hn_tbl_gen_134,What are the product specifications?,General,BM25Search,hn_tbl_gen_134,template,True
+858,hn_tbl_gen_136,What are the salary ranges?,General,BM25Search,hn_tbl_gen_136,template,True
+859,hn_tbl_gen_137,How did the product perform?,General,BM25Search,hn_tbl_gen_137,template,True
+860,hn_tbl_gen_139,What tax rates apply?,General,BM25Search,hn_tbl_gen_139,template,True
+861,hn_tbl_gen_142,How do the features compare?,General,BM25Search,hn_tbl_gen_142,template,True
+862,hn_tbl_gen_144,What's the attendance record?,General,BM25Search,hn_tbl_gen_144,template,True
+863,hn_tbl_gen_145,How is the grading rubric structured?,General,BM25Search,hn_tbl_gen_145,template,True
+864,hn_tricky_152,Is this a single-page summary?,General,BM25Search,hn_tricky_152,template,True
+865,hn_tricky_153,The page numbers seem wrong.,General,BM25Search,hn_tricky_153,template,True
+866,hn_tricky_154,The table of contents lists five chapters.,General,BM25Search,hn_tricky_154,template,True
+867,gen_10_9399285c,Are there any mentions of data retention,General,BM25Search,gen_10,template,False
+868,gen_08_25ce2258,Find information about non-disclosure obligations,General,BM25Search,gen_08,template,False
+869,gen_06_6464b145,What are the requirements for security measures?,General,BM25Search,gen_06_var,template,False
+870,gen_04_48c7671e,Explain data privacy as described in the document,General,BM25Search,gen_04,template,False
+871,gen_05_fc122468,Is there anything about dispute resolution in here?,General,BM25Search,gen_05_var,template,False
+872,gen_01_2a970942,What is the renewal terms,General,BM25Search,gen_01,template,False
+873,gen_02_b43761ef,Does this document mention escalation process,General,BM25Search,gen_02,template,False
+874,gen_13_64430ad2,Search for customer support in this document,General,BM25Search,gen_13,template,False
+875,gen_10_6464b145,Are there any mentions of security measures?,General,BM25Search,gen_10_var,template,False
+876,gen_12_2a970942,What's the definition of renewal terms,General,BM25Search,gen_12,template,False
+877,gen_05_b683aea4,Is there anything about onboarding process in here,General,BM25Search,gen_05,template,False
+878,gen_15_45e673bd,Is liability limits addressed anywhere in the document,General,BM25Search,gen_15,template,False
+879,gen_11_1b86513d,Does the document cover eligibility criteria,General,BM25Search,gen_11,template,False
+880,gen_18_48c7671e,What steps are involved in data privacy?,General,BM25Search,gen_18_var,template,False
+881,gen_16_48c7671e,What are the key takeaways about data privacy,General,BM25Search,gen_16,template,False
+882,gen_11_5dc0cc94,Does the document cover late fees,General,BM25Search,gen_11,template,False
+883,gen_03_b43761ef,How does escalation process work according to this document,General,BM25Search,gen_03,template,False
+884,gen_14_64430ad2,What can you tell me about customer support,General,BM25Search,gen_14,template,False
+885,gen_17_45e673bd,How is liability limits defined here,General,BM25Search,gen_17,template,False
+886,gen_19_042cead2,Who is responsible for leave policy,General,BM25Search,gen_19,template,False
+887,gen_20_b683aea4,What's the procedure for onboarding process,General,BM25Search,gen_20,template,False
+888,gen_07_6464b145,What does the document say about security measures,General,BM25Search,gen_07,template,False
+889,gen_05_fc122468,Is there anything about dispute resolution in here,General,BM25Search,gen_05,template,False
+890,gen_13_9eee3f85,Search for service level agreement in this document,General,BM25Search,gen_13,template,False
+891,gen_03_638e5485,How does employee benefits work according to this document,General,BM25Search,gen_03,template,False
+892,gen_01_b43761ef,What is the escalation process,General,BM25Search,gen_01,template,False
+893,gen_01_48c7671e,What is the data privacy,General,BM25Search,gen_01,template,False
+894,gen_10_80b6b1ff,Are there any mentions of quality assurance,General,BM25Search,gen_10,template,False
+895,gen_08_b683aea4,Find information about onboarding process,General,BM25Search,gen_08,template,False
+896,gen_03_fc122468,How does dispute resolution work according to this document,General,BM25Search,gen_03,template,False
+897,gen_02_9399285c,Does this document mention data retention?,General,BM25Search,gen_02_var,template,False
+898,gen_05_9399285c,Is there anything about data retention in here,General,BM25Search,gen_05,template,False
+899,gen_05_b43761ef,Is there anything about escalation process in here,General,BM25Search,gen_05,template,False
+900,gen_03_9399285c,How does data retention work according to this document,General,BM25Search,gen_03,template,False
+901,gen_16_f688f595,What are the key takeaways about termination rights,General,BM25Search,gen_16,template,False
+902,gen_10_64430ad2,Are there any mentions of customer support,General,BM25Search,gen_10,template,False
+903,gen_17_48c7671e,How is data privacy defined here,General,BM25Search,gen_17,template,False
+904,gen_14_2e82dce0,What can you tell me about force majeure,General,BM25Search,gen_14,template,False
+905,gen_09_6464b145,What's the policy on security measures?,General,BM25Search,gen_09_var,template,False
+906,gen_01_fc122468,What is the dispute resolution,General,BM25Search,gen_01,template,False
+907,gen_13_45e673bd,Search for liability limits in this document,General,BM25Search,gen_13,template,False
+908,gen_19_ada9f408,Who is responsible for refund policy,General,BM25Search,gen_19,template,False
+909,gen_05_2e82dce0,Is there anything about force majeure in here,General,BM25Search,gen_05,template,False
+910,gen_18_64430ad2,What steps are involved in customer support,General,BM25Search,gen_18,template,False
+911,gen_13_6464b145,Search for security measures in this document,General,BM25Search,gen_13,template,False
+912,gen_05_9eee3f85,Is there anything about service level agreement in here,General,BM25Search,gen_05,template,False
+913,gen_02_9399285c,Does this document mention data retention,General,BM25Search,gen_02,template,False
+914,gen_17_48c7671e,How is data privacy defined here?,General,BM25Search,gen_17_var,template,False
+915,gen_10_6464b145,Are there any mentions of security measures,General,BM25Search,gen_10,template,False
+916,gen_06_48c7671e,What are the requirements for data privacy,General,BM25Search,gen_06,template,False
+917,gen_12_b43761ef,What's the definition of escalation process,General,BM25Search,gen_12,template,False
+918,gen_08_5dc0cc94,Find information about late fees,General,BM25Search,gen_08,template,False
+919,gen_19_64430ad2,Who is responsible for customer support,General,BM25Search,gen_19,template,False
+920,gen_09_923b2566,What's the policy on code of conduct,General,BM25Search,gen_09,template,False
+921,gen_09_5dc0cc94,What's the policy on late fees,General,BM25Search,gen_09,template,False
+922,gen_07_2e82dce0,What does the document say about force majeure,General,BM25Search,gen_07,template,False
+923,gen_03_2e82dce0,How does force majeure work according to this document,General,BM25Search,gen_03,template,False
+924,gen_02_042cead2,Does this document mention leave policy,General,BM25Search,gen_02,template,False
+925,gen_12_64430ad2,What's the definition of customer support,General,BM25Search,gen_12,template,False
+926,gen_14_8dd749a9,What can you tell me about warranty period,General,BM25Search,gen_14,template,False
+927,gen_20_1b86513d,What's the procedure for eligibility criteria,General,BM25Search,gen_20,template,False
+928,gen_13_638e5485,Search for employee benefits in this document,General,BM25Search,gen_13,template,False
+929,gen_03_6464b145,How does security measures work according to this document,General,BM25Search,gen_03,template,False
+930,gen_15_80b6b1ff,Is quality assurance addressed anywhere in the document?,General,BM25Search,gen_15_var,template,False
+931,gen_18_1b86513d,What steps are involved in eligibility criteria,General,BM25Search,gen_18,template,False
+932,gen_20_41876fff,What's the procedure for compliance requirements,General,BM25Search,gen_20,template,False
+933,gen_01_ada9f408,What is the refund policy,General,BM25Search,gen_01,template,False
+934,gen_20_ada9f408,What's the procedure for refund policy,General,BM25Search,gen_20,template,False
+935,gen_09_1b86513d,What's the policy on eligibility criteria,General,BM25Search,gen_09,template,False
+936,gen_03_428700a6,How does intellectual property work according to this document,General,BM25Search,gen_03,template,False
+937,gen_14_41876fff,What can you tell me about compliance requirements,General,BM25Search,gen_14,template,False
+938,gen_14_2a970942,What can you tell me about renewal terms,General,BM25Search,gen_14,template,False
+939,gen_20_48c7671e,What's the procedure for data privacy,General,BM25Search,gen_20,template,False
+940,gen_03_2a970942,How does renewal terms work according to this document,General,BM25Search,gen_03,template,False
+941,gen_16_2e82dce0,What are the key takeaways about force majeure,General,BM25Search,gen_16,template,False
+942,gen_12_45e673bd,What's the definition of liability limits,General,BM25Search,gen_12,template,False
+943,gen_11_042cead2,Does the document cover leave policy,General,BM25Search,gen_11,template,False
+944,gen_11_638e5485,Does the document cover employee benefits,General,BM25Search,gen_11,template,False
+945,gen_18_847b9fd0,What steps are involved in encryption standard,General,BM25Search,gen_18,template,False
+946,gen_06_6464b145,What are the requirements for security measures,General,BM25Search,gen_06,template,False
+947,gen_08_48c7671e,Find information about data privacy,General,BM25Search,gen_08,template,False
+948,gen_13_25ce2258,Search for non-disclosure obligations in this document,General,BM25Search,gen_13,template,False
+949,gen_14_847b9fd0,What can you tell me about encryption standard,General,BM25Search,gen_14,template,False
+950,gen_07_b683aea4,What does the document say about onboarding process?,General,BM25Search,gen_07_var,template,False
+951,gen_08_638e5485,Find information about employee benefits,General,BM25Search,gen_08,template,False
+952,gen_17_80b6b1ff,How is quality assurance defined here,General,BM25Search,gen_17,template,False
+953,gen_02_9eee3f85,Does this document mention service level agreement,General,BM25Search,gen_02,template,False
+954,gen_05_1b86513d,Is there anything about eligibility criteria in here,General,BM25Search,gen_05,template,False
+955,gen_19_8dd749a9,Who is responsible for warranty period,General,BM25Search,gen_19,template,False
+956,gen_03_41876fff,How does compliance requirements work according to this document,General,BM25Search,gen_03,template,False
+957,gen_10_b43761ef,Are there any mentions of escalation process,General,BM25Search,gen_10,template,False
+958,gen_16_638e5485,What are the key takeaways about employee benefits,General,BM25Search,gen_16,template,False
+959,gen_14_8dd749a9,What can you tell me about warranty period?,General,BM25Search,gen_14_var,template,False
+960,gen_07_9eee3f85,What does the document say about service level agreement,General,BM25Search,gen_07,template,False
+961,gen_18_6464b145,What steps are involved in security measures?,General,BM25Search,gen_18_var,template,False
+962,gen_20_638e5485,What's the procedure for employee benefits,General,BM25Search,gen_20,template,False
+963,gen_15_2a970942,Is renewal terms addressed anywhere in the document,General,BM25Search,gen_15,template,False
+964,gen_11_64430ad2,Does the document cover customer support?,General,BM25Search,gen_11_var,template,False
+965,gen_16_ada9f408,What are the key takeaways about refund policy,General,BM25Search,gen_16,template,False
+966,gen_14_9399285c,What can you tell me about data retention,General,BM25Search,gen_14,template,False
+967,gen_07_9ea52434,What does the document say about cancellation process,General,BM25Search,gen_07,template,False
+968,gen_09_042cead2,What's the policy on leave policy,General,BM25Search,gen_09,template,False
+969,gen_03_ada9f408,How does refund policy work according to this document,General,BM25Search,gen_03,template,False
+970,gen_12_6464b145,What's the definition of security measures,General,BM25Search,gen_12,template,False
+971,gen_10_9ea52434,Are there any mentions of cancellation process?,General,BM25Search,gen_10_var,template,False
+972,gen_05_428700a6,Is there anything about intellectual property in here,General,BM25Search,gen_05,template,False
+973,gen_04_2e82dce0,Explain force majeure as described in the document,General,BM25Search,gen_04,template,False
+974,gen_07_9eee3f85,What does the document say about service level agreement?,General,BM25Search,gen_07_var,template,False
+975,gen_04_b43761ef,Explain escalation process as described in the document,General,BM25Search,gen_04,template,False
+976,gen_02_638e5485,Does this document mention employee benefits,General,BM25Search,gen_02,template,False
+977,gen_13_923b2566,Search for code of conduct in this document,General,BM25Search,gen_13,template,False
+978,gen_20_f688f595,What's the procedure for termination rights,General,BM25Search,gen_20,template,False
+979,gen_06_428700a6,What are the requirements for intellectual property,General,BM25Search,gen_06,template,False
+980,gen_16_8dd749a9,What are the key takeaways about warranty period,General,BM25Search,gen_16,template,False
+981,gen_08_2a970942,Find information about renewal terms,General,BM25Search,gen_08,template,False
+982,gen_20_ada9f408,What's the procedure for refund policy?,General,BM25Search,gen_20_var,template,False
+983,gen_19_b43761ef,Who is responsible for escalation process,General,BM25Search,gen_19,template,False
+984,gen_06_ada9f408,What are the requirements for refund policy,General,BM25Search,gen_06,template,False
+985,gen_08_042cead2,Find information about leave policy,General,BM25Search,gen_08,template,False
+986,gen_08_ada9f408,Find information about refund policy,General,BM25Search,gen_08,template,False
+987,gen_04_8dd749a9,Explain warranty period as described in the document,General,BM25Search,gen_04,template,False
+988,gen_04_41876fff,Explain compliance requirements as described in the document?,General,BM25Search,gen_04_var,template,False
+989,gen_14_f688f595,What can you tell me about termination rights,General,BM25Search,gen_14,template,False
+990,gen_01_6464b145,What is the security measures,General,BM25Search,gen_01,template,False
+991,gen_19_9399285c,Who is responsible for data retention?,General,BM25Search,gen_19_var,template,False
+992,gen_02_428700a6,Does this document mention intellectual property,General,BM25Search,gen_02,template,False
+993,gen_06_2a970942,What are the requirements for renewal terms,General,BM25Search,gen_06,template,False
+994,gen_09_fc122468,What's the policy on dispute resolution,General,BM25Search,gen_09,template,False
+995,gen_14_428700a6,What can you tell me about intellectual property,General,BM25Search,gen_14,template,False
+996,gen_18_9ea52434,What steps are involved in cancellation process,General,BM25Search,gen_18,template,False
+997,gen_11_ada9f408,Does the document cover refund policy,General,BM25Search,gen_11,template,False
+998,gen_19_6464b145,Who is responsible for security measures,General,BM25Search,gen_19,template,False
+999,gen_19_fc122468,Who is responsible for dispute resolution,General,BM25Search,gen_19,template,False
+1000,gen_20_9ea52434,What's the procedure for cancellation process,General,BM25Search,gen_20,template,False
+1001,gen_12_042cead2,What's the definition of leave policy,General,BM25Search,gen_12,template,False
+1002,gen_13_f688f595,Search for termination rights in this document,General,BM25Search,gen_13,template,False
+1003,gen_18_9eee3f85,What steps are involved in service level agreement,General,BM25Search,gen_18,template,False
+1004,gen_15_8dd749a9,Is warranty period addressed anywhere in the document,General,BM25Search,gen_15,template,False
+1005,gen_04_45e673bd,Explain liability limits as described in the document,General,BM25Search,gen_04,template,False
+1006,gen_07_fc122468,What does the document say about dispute resolution,General,BM25Search,gen_07,template,False
+1007,gen_09_9eee3f85,What's the policy on service level agreement,General,BM25Search,gen_09,template,False
+1008,gen_09_41876fff,What's the policy on compliance requirements,General,BM25Search,gen_09,template,False
+1009,gen_20_fc122468,What's the procedure for dispute resolution,General,BM25Search,gen_20,template,False
+1010,gen_01_2e82dce0,What is the force majeure,General,BM25Search,gen_01,template,False
+1011,gen_14_923b2566,What can you tell me about code of conduct,General,BM25Search,gen_14,template,False
+1012,gen_09_8dd749a9,What's the policy on warranty period,General,BM25Search,gen_09,template,False
+1013,gen_12_5dc0cc94,What's the definition of late fees,General,BM25Search,gen_12,template,False
+1014,gen_10_5dc0cc94,Are there any mentions of late fees,General,BM25Search,gen_10,template,False
+1015,gen_10_9ea52434,Are there any mentions of cancellation process,General,BM25Search,gen_10,template,False
+1016,gen_19_41876fff,Who is responsible for compliance requirements,General,BM25Search,gen_19,template,False
+1017,gen_12_b683aea4,What's the definition of onboarding process,General,BM25Search,gen_12,template,False
+1018,gen_20_8dd749a9,What's the procedure for warranty period,General,BM25Search,gen_20,template,False
+1019,gen_17_ada9f408,How is refund policy defined here,General,BM25Search,gen_17,template,False
+1020,gen_04_9399285c,Explain data retention as described in the document,General,BM25Search,gen_04,template,False
+1021,gen_01_45e673bd,What is the liability limits,General,BM25Search,gen_01,template,False
+1022,gen_04_fc122468,Explain dispute resolution as described in the document,General,BM25Search,gen_04,template,False
+1023,gen_17_638e5485,How is employee benefits defined here,General,BM25Search,gen_17,template,False
+1024,gen_01_64430ad2,What is the customer support,General,BM25Search,gen_01,template,False
+1025,gen_05_6464b145,Is there anything about security measures in here,General,BM25Search,gen_05,template,False
+1026,gen_17_b683aea4,How is onboarding process defined here,General,BM25Search,gen_17,template,False
+1027,gen_04_41876fff,Explain compliance requirements as described in the document,General,BM25Search,gen_04,template,False
+1028,gen_07_9399285c,What does the document say about data retention,General,BM25Search,gen_07,template,False
+1029,gen_10_ada9f408,Are there any mentions of refund policy,General,BM25Search,gen_10,template,False
+1030,gen_14_45e673bd,What can you tell me about liability limits,General,BM25Search,gen_14,template,False
+1031,gen_15_80b6b1ff,Is quality assurance addressed anywhere in the document,General,BM25Search,gen_15,template,False
+1032,gen_05_923b2566,Is there anything about code of conduct in here,General,BM25Search,gen_05,template,False
+1033,gen_12_042cead2,What's the definition of leave policy?,General,BM25Search,gen_12_var,template,False
+1034,gen_19_9eee3f85,Who is responsible for service level agreement,General,BM25Search,gen_19,template,False
+1035,gen_17_8dd749a9,How is warranty period defined here,General,BM25Search,gen_17,template,False
+1036,gen_06_f688f595,What are the requirements for termination rights,General,BM25Search,gen_06,template,False
+1037,gen_16_b683aea4,What are the key takeaways about onboarding process,General,BM25Search,gen_16,template,False
+1038,gen_15_9eee3f85,Is service level agreement addressed anywhere in the document,General,BM25Search,gen_15,template,False
+1039,gen_11_25ce2258,Does the document cover non-disclosure obligations,General,BM25Search,gen_11,template,False
+1040,gen_01_b683aea4,What is the onboarding process,General,BM25Search,gen_01,template,False
+1041,gen_03_41876fff,How does compliance requirements work according to this document?,General,BM25Search,gen_03_var,template,False
+1042,gen_15_25ce2258,Is non-disclosure obligations addressed anywhere in the document,General,BM25Search,gen_15,template,False
+1043,gen_01_9ea52434,What is the cancellation process,General,BM25Search,gen_01,template,False
+1044,gen_11_80b6b1ff,Does the document cover quality assurance,General,BM25Search,gen_11,template,False
+1045,gen_12_f688f595,What's the definition of termination rights,General,BM25Search,gen_12,template,False
+1046,gen_11_428700a6,Does the document cover intellectual property,General,BM25Search,gen_11,template,False
+1047,gen_03_48c7671e,How does data privacy work according to this document?,General,BM25Search,gen_03_var,template,False
+1048,gen_01_923b2566,What is the code of conduct,General,BM25Search,gen_01,template,False
+1049,gen_17_923b2566,How is code of conduct defined here,General,BM25Search,gen_17,template,False
+1050,gen_20_45e673bd,What's the procedure for liability limits,General,BM25Search,gen_20,template,False
+1051,gen_10_923b2566,Are there any mentions of code of conduct,General,BM25Search,gen_10,template,False
+1052,gen_04_638e5485,Explain employee benefits as described in the document,General,BM25Search,gen_04,template,False
+1053,gen_17_f688f595,How is termination rights defined here,General,BM25Search,gen_17,template,False
+1054,gen_19_48c7671e,Who is responsible for data privacy,General,BM25Search,gen_19,template,False
+1055,gen_06_2e82dce0,What are the requirements for force majeure,General,BM25Search,gen_06,template,False
+1056,gen_03_48c7671e,How does data privacy work according to this document,General,BM25Search,gen_03,template,False
+1057,gen_12_41876fff,What's the definition of compliance requirements,General,BM25Search,gen_12,template,False
+1058,gen_18_6464b145,What steps are involved in security measures,General,BM25Search,gen_18,template,False
+1059,gen_07_b683aea4,What does the document say about onboarding process,General,BM25Search,gen_07,template,False
+1060,gen_14_b43761ef,What can you tell me about escalation process,General,BM25Search,gen_14,template,False
+1061,gen_11_5dc0cc94,Does the document cover late fees?,General,BM25Search,gen_11_var,template,False
+1062,gen_16_2a970942,What are the key takeaways about renewal terms,General,BM25Search,gen_16,template,False
+1063,gen_18_48c7671e,What steps are involved in data privacy,General,BM25Search,gen_18,template,False
+1064,gen_16_847b9fd0,What are the key takeaways about encryption standard,General,BM25Search,gen_16,template,False
+1065,gen_09_042cead2,What's the policy on leave policy?,General,BM25Search,gen_09_var,template,False
+1066,gen_11_8dd749a9,Does the document cover warranty period,General,BM25Search,gen_11,template,False
+1067,gen_07_80b6b1ff,What does the document say about quality assurance,General,BM25Search,gen_07,template,False
+1068,gen_03_8dd749a9,How does warranty period work according to this document,General,BM25Search,gen_03,template,False
+1069,gen_08_80b6b1ff,Find information about quality assurance?,General,BM25Search,gen_08_var,template,False
+1070,gen_05_2a970942,Is there anything about renewal terms in here,General,BM25Search,gen_05,template,False
+1071,gen_14_25ce2258,What can you tell me about non-disclosure obligations,General,BM25Search,gen_14,template,False
+1072,gen_04_2a970942,Explain renewal terms as described in the document,General,BM25Search,gen_04,template,False
+1073,gen_18_2e82dce0,What steps are involved in force majeure,General,BM25Search,gen_18,template,False
+1074,gen_11_9eee3f85,Does the document cover service level agreement,General,BM25Search,gen_11,template,False
+1075,gen_08_41876fff,Find information about compliance requirements,General,BM25Search,gen_08,template,False
+1076,gen_01_fc122468,What is the dispute resolution?,General,BM25Search,gen_01_var,template,False
+1077,gen_01_8dd749a9,What is the warranty period,General,BM25Search,gen_01,template,False
+1078,gen_07_45e673bd,What does the document say about liability limits,General,BM25Search,gen_07,template,False
+1079,gen_15_5dc0cc94,Is late fees addressed anywhere in the document,General,BM25Search,gen_15,template,False
+1080,gen_13_ada9f408,Search for refund policy in this document,General,BM25Search,gen_13,template,False
+1081,gen_14_1b86513d,What can you tell me about eligibility criteria,General,BM25Search,gen_14,template,False
+1082,gen_20_847b9fd0,What's the procedure for encryption standard,General,BM25Search,gen_20,template,False
+1083,gen_07_638e5485,What does the document say about employee benefits,General,BM25Search,gen_07,template,False
+1084,gen_18_923b2566,What steps are involved in code of conduct,General,BM25Search,gen_18,template,False
+1085,gen_02_8dd749a9,Does this document mention warranty period,General,BM25Search,gen_02,template,False
+1086,gen_18_5dc0cc94,What steps are involved in late fees,General,BM25Search,gen_18,template,False
+1087,gen_03_45e673bd,How does liability limits work according to this document,General,BM25Search,gen_03,template,False
+1088,gen_04_6464b145,Explain security measures as described in the document,General,BM25Search,gen_04,template,False
+1089,gen_17_b43761ef,How is escalation process defined here,General,BM25Search,gen_17,template,False
+1090,gen_18_fc122468,What steps are involved in dispute resolution,General,BM25Search,gen_18,template,False
+1091,gen_10_5dc0cc94,Are there any mentions of late fees?,General,BM25Search,gen_10_var,template,False
+1092,gen_09_6464b145,What's the policy on security measures,General,BM25Search,gen_09,template,False
+1093,gen_07_428700a6,What does the document say about intellectual property,General,BM25Search,gen_07,template,False
+1094,gen_10_638e5485,Are there any mentions of employee benefits,General,BM25Search,gen_10,template,False
+1095,gen_18_428700a6,What steps are involved in intellectual property,General,BM25Search,gen_18,template,False
+1096,gen_07_48c7671e,What does the document say about data privacy,General,BM25Search,gen_07,template,False
+1097,gen_02_b683aea4,Does this document mention onboarding process,General,BM25Search,gen_02,template,False
+1098,gen_06_9ea52434,What are the requirements for cancellation process,General,BM25Search,gen_06,template,False
+1099,gen_20_64430ad2,What's the procedure for customer support,General,BM25Search,gen_20,template,False
+1100,gen_10_8dd749a9,Are there any mentions of warranty period,General,BM25Search,gen_10,template,False
+1101,gen_18_2a970942,What steps are involved in renewal terms,General,BM25Search,gen_18,template,False
+1102,gen_11_9399285c,Does the document cover data retention,General,BM25Search,gen_11,template,False
+1103,gen_06_638e5485,What are the requirements for employee benefits,General,BM25Search,gen_06,template,False
+1104,gen_18_9399285c,What steps are involved in data retention,General,BM25Search,gen_18,template,False
+1105,gen_13_b43761ef,Search for escalation process in this document,General,BM25Search,gen_13,template,False
+1106,gen_08_1b86513d,Find information about eligibility criteria,General,BM25Search,gen_08,template,False
+1107,gen_17_fc122468,How is dispute resolution defined here,General,BM25Search,gen_17,template,False
+1108,gen_05_80b6b1ff,Is there anything about quality assurance in here,General,BM25Search,gen_05,template,False
+1109,gen_19_9399285c,Who is responsible for data retention,General,BM25Search,gen_19,template,False
+1110,gen_20_847b9fd0,What's the procedure for encryption standard?,General,BM25Search,gen_20_var,template,False
+1111,gen_10_b683aea4,Are there any mentions of onboarding process,General,BM25Search,gen_10,template,False
+1112,gen_09_ada9f408,What's the policy on refund policy,General,BM25Search,gen_09,template,False
+1113,gen_19_2a970942,Who is responsible for renewal terms,General,BM25Search,gen_19,template,False
+1114,gen_08_9399285c,Find information about data retention,General,BM25Search,gen_08,template,False
+1115,gen_19_64430ad2,Who is responsible for customer support?,General,BM25Search,gen_19_var,template,False
+1116,gen_16_6464b145,What are the key takeaways about security measures,General,BM25Search,gen_16,template,False
+1117,gen_03_9399285c,How does data retention work according to this document?,General,BM25Search,gen_03_var,template,False
+1118,gen_16_41876fff,What are the key takeaways about compliance requirements,General,BM25Search,gen_16,template,False
